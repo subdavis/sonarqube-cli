@@ -1,0 +1,4 @@
+- Read @README.md every time to start.
+- Read @package.json every time to start.
+- If I ask you to do anything related to the dev environment, like eslint or tsconfig, always check and read the relevent config files before deciding on what to do.
+- After you've finished making edits and think they work, run eslint and typescript checks
