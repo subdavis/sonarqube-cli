@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(yarn install)",
+      "Bash(timeout 5 yarn dev:*)",
+      "Bash(yarn build)",
+      "Bash(yarn lint)",
+      "Bash(yarn format)",
+      "Bash(yarn typecheck)",
+      "Bash(rm:*)",
+      "Bash(yarn dev)",
+      "Bash(yarn dev:*)",
+      "Bash(SONARQUBE_TOKEN=dummy yarn dev --help)",
+      "Bash(SONARQUBE_TOKEN=dummy yarn dev issue --help)",
+      "Bash(SONARQUBE_TOKEN=dummy yarn dev issue list --help)",
+      "Bash(SONARQUBE_TOKEN=dummy ./dist/index.js --help)",
+      "Bash(SONARQUBE_TOKEN=dummy yarn dev issue show --help)",
+      "Bash(./dist/index.js --help)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits"
+  }
+}

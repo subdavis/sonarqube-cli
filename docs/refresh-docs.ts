@@ -1,12 +1,9 @@
 import { writeFileSync, mkdirSync } from 'fs';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
+import { join } from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const baseUrl = 'https://next.sonarqube.com/sonarqube/api/';
-const docsUrl = 'webservices/list?include_internals=true';
+const baseUrl = 'https://sonarcloud.io/';
+const docsUrl = 'api/webservices/list?include_internals=true';
+const exampleUrl = 'api/webservices/response_example';
 
 async function fetchJson(
   url: string,
@@ -15,7 +12,7 @@ async function fetchJson(
   transform?: (data: unknown) => any
 ) {
   try {
-    const response = await fetch(baseUrl + url);
+    const response = await globalThis.fetch(baseUrl + url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -24,7 +21,7 @@ async function fetchJson(
       data = transform(data);
     }
 
-    const docsDir = join(__dirname, '../..', 'docs');
+    const docsDir = join(process.cwd(), 'docs');
     const outputPath = join(docsDir, outputFileName);
 
     // Ensure docs directory exists
@@ -38,19 +35,27 @@ async function fetchJson(
 }
 
 function getResponseExample(params: { controller: string; action: string }) {
-  const exampleUrl = `webservices/response_example?controller=${encodeURIComponent(params.controller)}&action=${encodeURIComponent(params.action)}`;
   fetchJson(
-    exampleUrl,
+    `${exampleUrl}?controller=${encodeURIComponent(params.controller)}&action=${encodeURIComponent(params.action)}`,
     `response-example-${params.controller.replace(/\//g, '-')}-${params.action}.json`,
     (data) => {
-      return JSON.parse(data.example);
+      return JSON.parse((data as { example: string }).example);
     }
   );
 }
 
 fetchJson(docsUrl, 'api-spec.json');
 
-const controllers = [{ controller: 'api/issues', action: 'search' }];
+const controllers = [
+  { controller: 'api/issues', action: 'search' },
+  { controller: 'api/rules', action: 'show' },
+  { controller: 'api/sources', action: 'issue_snippets' },
+  { controller: 'api/sources', action: 'lines' },
+  { controller: 'api/hotspots', action: 'search' },
+  { controller: 'api/hotspots', action: 'show' },
+  { controller: 'api/components', action: 'search_projects' },
+  { controller: 'api/system', action: 'status' },
+];
 
 controllers.forEach(({ controller, action }) => {
   getResponseExample({ controller, action });
