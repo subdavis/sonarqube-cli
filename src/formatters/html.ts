@@ -17,7 +17,7 @@ function formatCodeLine(line: string): string {
 
   // Check for inline comments first
   for (const pattern of inlineCommentPatterns) {
-    const match = line.match(pattern);
+    const match = pattern.exec(line);
     if (match) {
       const [, codePart, commentPart] = match;
       // Only treat as comment if there's actual code before it (not just whitespace)
@@ -46,7 +46,7 @@ function formatCodeLine(line: string): string {
 
   // Check if line starts with a comment
   for (const pattern of lineStartCommentPatterns) {
-    const match = line.match(pattern);
+    const match = pattern.exec(line);
     if (match) {
       const [, whitespace, comment] = match;
       return `${chalk.cyan.dim(whitespace)}${chalk.gray.dim(comment)}`;
@@ -57,7 +57,7 @@ function formatCodeLine(line: string): string {
   const trimmedLine = line.trim();
   if (trimmedLine.startsWith('*') && !trimmedLine.startsWith('*/')) {
     // This looks like a continuation of a /* */ comment block
-    const leadingWhitespace = line.match(/^\s*/)?.[0] || '';
+    const leadingWhitespace = /^\s*/.exec(line)?.[0] || '';
     const commentPart = line.substring(leadingWhitespace.length);
     return `${chalk.cyan.dim(leadingWhitespace)}${chalk.gray.dim(commentPart)}`;
   }
@@ -82,50 +82,90 @@ export function stripHtmlTags(html: string): string {
   return html.replace(/<[^>]*>/g, '');
 }
 
+function breakLongWord(word: string, maxWidth: number): string[] {
+  const chunks: string[] = [];
+  for (let i = 0; i < word.length; i += maxWidth) {
+    chunks.push(word.slice(i, i + maxWidth));
+  }
+  return chunks;
+}
+
+function addWordToLine(currentLine: string, word: string): string {
+  return currentLine + (currentLine ? ' ' : '') + word;
+}
+
+function processWordInLine(
+  word: string,
+  currentLine: string,
+  maxWidth: number
+): {
+  lines: string[];
+  newCurrentLine: string;
+} {
+  const result: string[] = [];
+  let newLine = currentLine;
+
+  // Case 1: Word is too long for a single line
+  if (word.length > maxWidth) {
+    if (newLine) {
+      result.push(newLine.trim());
+      newLine = '';
+    }
+    result.push(...breakLongWord(word, maxWidth));
+    return { lines: result, newCurrentLine: newLine };
+  }
+
+  // Case 2: Word fits on current line
+  const lineWithWord = addWordToLine(newLine, word);
+  if (lineWithWord.length <= maxWidth) {
+    return { lines: result, newCurrentLine: lineWithWord };
+  }
+
+  // Case 3: Word needs a new line
+  if (newLine) {
+    result.push(newLine.trim());
+  }
+  return { lines: result, newCurrentLine: word };
+}
+
+function wrapSingleLine(line: string, maxWidth: number): string[] {
+  if (line.length <= maxWidth) {
+    return [line];
+  }
+
+  const words = line.split(' ');
+  const wrappedLines: string[] = [];
+  let currentLine = '';
+
+  for (const word of words) {
+    const { lines, newCurrentLine } = processWordInLine(
+      word,
+      currentLine,
+      maxWidth
+    );
+    wrappedLines.push(...lines);
+    currentLine = newCurrentLine;
+  }
+
+  if (currentLine) {
+    wrappedLines.push(currentLine.trim());
+  }
+
+  return wrappedLines;
+}
+
 export function wrapText(text: string, maxWidth = COLUMNS - 6): string {
   if (!text || maxWidth <= 0) return text;
-
   if (text.length <= maxWidth) return text;
 
   const lines = text.split('\n');
-  const wrappedLines: string[] = [];
+  const allWrappedLines: string[] = [];
 
   for (const line of lines) {
-    if (line.length <= maxWidth) {
-      wrappedLines.push(line);
-      continue;
-    }
-
-    const words = line.split(' ');
-    let currentLine = '';
-
-    for (const word of words) {
-      if (word.length > maxWidth) {
-        // Handle very long words by breaking them
-        if (currentLine) {
-          wrappedLines.push(currentLine.trim());
-          currentLine = '';
-        }
-
-        for (let i = 0; i < word.length; i += maxWidth) {
-          wrappedLines.push(word.slice(i, i + maxWidth));
-        }
-      } else if ((currentLine + ' ' + word).length <= maxWidth) {
-        currentLine += (currentLine ? ' ' : '') + word;
-      } else {
-        if (currentLine) {
-          wrappedLines.push(currentLine.trim());
-        }
-        currentLine = word;
-      }
-    }
-
-    if (currentLine) {
-      wrappedLines.push(currentLine.trim());
-    }
+    allWrappedLines.push(...wrapSingleLine(line, maxWidth));
   }
 
-  return wrappedLines.join('\n');
+  return allWrappedLines.join('\n');
 }
 
 export function formatHtml(html: string): string {

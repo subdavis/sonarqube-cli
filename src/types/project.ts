@@ -31,4 +31,5 @@ export interface ProjectListFilters {
   p?: number;
   ps?: number;
   favorites?: boolean;
+  json?: boolean;
 }

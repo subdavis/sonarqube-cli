@@ -21,9 +21,7 @@
       "effort": "2h1min",
       "creationDate": "2013-05-13T17:55:39+0200",
       "updateDate": "2013-05-13T17:55:39+0200",
-      "tags": [
-        "bug"
-      ],
+      "tags": ["bug"],
       "type": "RELIABILITY",
       "comments": [
         {
@@ -38,14 +36,8 @@
       "attr": {
         "jira-issue-key": "SONAR-1234"
       },
-      "transitions": [
-        "unconfirm",
-        "resolve",
-        "falsepositive"
-      ],
-      "actions": [
-        "comment"
-      ],
+      "transitions": ["unconfirm", "resolve", "falsepositive"],
+      "actions": ["comment"],
       "textRange": {
         "startLine": 2,
         "endLine": 2,

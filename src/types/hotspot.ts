@@ -4,11 +4,13 @@ export interface HotspotListFilters {
   status?: string[];
   fix?: boolean;
   limit?: number;
+  json?: boolean;
 }
 
 export interface HotspotShowFilters {
   organization?: string;
   fix?: boolean;
+  json?: boolean;
 }
 
 export interface Hotspot {

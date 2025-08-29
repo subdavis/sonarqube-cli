@@ -22,10 +22,7 @@
       "projectUuidV4": "00000000-0000-0000-0000-000000000001",
       "name": "My Project 1",
       "isFavorite": true,
-      "tags": [
-        "finance",
-        "java"
-      ],
+      "tags": ["finance", "java"],
       "visibility": "public",
       "isNew": true,
       "hasPullRequestOrBranchAnalysis": false,
@@ -51,11 +48,7 @@
       "projectUuidV4": "00000000-0000-0000-0000-000000000003",
       "name": "My Project 3",
       "isFavorite": false,
-      "tags": [
-        "sales",
-        "offshore",
-        "java"
-      ],
+      "tags": ["sales", "offshore", "java"],
       "visibility": "public",
       "isNew": true,
       "hasPullRequestOrBranchAnalysis": false,

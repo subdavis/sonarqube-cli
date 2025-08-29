@@ -17,23 +17,22 @@ Command line interface for SonarQube Server API.
 
 `snr` can be configured according to the table below.
 
-| Env Variable     | `sonar-project.properties` | Command Line     | Required   |
-| ---------------- | -------------------------- | ---------------- | ---------- |
-| `SONAR_TOKEN`    | `sonar.token`              | none             | yes        |
-| `SONAR_HOST_URL` | `sonar.host.url`           | `--base-url`     | yes        |
-| n/a              | `sonar.projectKey`         | `--project`      | no         |
-| n/a              | `sonar.organization`       | `--organization` | cloud only |
-
-Precedence:
-
 - command-line args are highest priority
 - next, if there's a `sonar-project.properties` somewhere up your working directory tree, it will be used.
 - env variables are checked last.
 
+| Env Variable     | `sonar-project.properties` | Command Line     |
+| ---------------- | -------------------------- | ---------------- |
+| `SONAR_TOKEN`    | `sonar.token`              | none             |
+| `SONAR_HOST_URL` | `sonar.host.url`           | `--base-url`     |
+| n/a              | `sonar.projectKey`         | `--project`      |
+| n/a              | `sonar.organization`       | `--organization` |
+
 ```
 ~$ snr help
+Usage: snr [options] [command]
 
-CLI for SonarQube Server API
+CLI for SonarQube Server & Cloud API
 
 Options:
   -V, --version     output the version number
@@ -41,12 +40,16 @@ Options:
   -h, --help        display help for command
 
 Commands:
-  info              Show CLI information
-  issue             Manage issues
-  hotspot           Manage security hotspots
-  project           Manage SonarQube projects
+  issue             Search and review issues
+  hotspot           Search and review security hotspots
+  project           Show SonarQube projects
   status            Check system status
   help [command]    display help for command
+
+Examples:
+  snr issue list --project my-project --severity HIGH
+  snr hotspot show AZjzzVD1Xsy7a47AllAl
+  snr project list --favorites --json
 ```
 
 ## Development

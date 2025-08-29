@@ -16,7 +16,10 @@
       "Bash(SONARQUBE_TOKEN=dummy yarn dev issue list --help)",
       "Bash(SONARQUBE_TOKEN=dummy ./dist/index.js --help)",
       "Bash(SONARQUBE_TOKEN=dummy yarn dev issue show --help)",
-      "Bash(./dist/index.js --help)"
+      "Bash(./dist/index.js --help)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(node:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": [],

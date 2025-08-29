@@ -6,24 +6,28 @@ import { createHotspotCommands } from './commands/hotspot';
 import { createProjectCommands } from './commands/project';
 import { createStatusCommand } from './commands/status';
 import { setGlobalBaseUrl } from './http';
+import pkgData from '../package.json';
 
 const program = new Command();
 
 program
-  .name('sonarqube-cli')
-  .description('CLI for SonarQube Server API')
-  .version('0.1.0')
+  .name('snr')
+  .description('CLI for SonarQube Server & Cloud API')
+  .version(pkgData.version)
+  .addHelpText(
+    'after',
+    [
+      '',
+      'Examples:',
+      '  snr issue list --project my-project --severity HIGH',
+      '  snr hotspot show AZjzzVD1Xsy7a47AllAl',
+      '  snr project list --favorites',
+      '',
+    ].join('\n')
+  )
   .option('--base-url <url>', 'SonarQube server base URL')
   .hook('preAction', (cmd) => {
     setGlobalBaseUrl(cmd.opts().baseUrl);
-  });
-
-program
-  .command('info')
-  .description('Show CLI information')
-  .action(() => {
-    console.log('SonarQube CLI v0.1.0');
-    console.log('Use --help to see available commands');
   });
 
 program.addCommand(createIssueCommands());

@@ -18,5 +18,9 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "sonarlint.connectedMode.project": {
+    "connectionId": "brandons-org",
+    "projectKey": "sonarqube-cli"
   }
 }

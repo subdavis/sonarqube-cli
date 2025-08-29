@@ -23,7 +23,7 @@ export async function searchIssues(
       assignees: filters.assignee?.join(','),
       organization: filters.organization,
       impactSeverities: filters.severity?.join(','),
-      issueStatuses: filters.status?.join(','),
+      issueStatuses: filters.status?.map((s) => s.toUpperCase()).join(','),
       ps: filters.limit || 20,
     },
   });
@@ -73,7 +73,7 @@ export async function searchHotspots(
       params: {
         projectKey: filters.project,
         organization: filters.organization,
-        status: filters.status?.join(','),
+        status: filters.status?.map((s) => s.toUpperCase()).join(','),
         ps: filters.limit || 20,
       },
     }

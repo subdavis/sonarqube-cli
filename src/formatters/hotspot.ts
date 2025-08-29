@@ -8,9 +8,7 @@ export function formatHotspot(hotspot: Hotspot) {
   return indent(
     [
       `${chalk.bold.underline(hotspot.key)}: ${chalk.reset(hotspot.message)}`,
-      indent(
-        `${chalk.blue.dim(hotspot.component)}${lineInfo}`
-      ),
+      indent(`${chalk.blue.dim(hotspot.component)}${lineInfo}`),
       chalk.blue(
         indent(
           `${chalk.dim(hotspot.status)}, Rule:${chalk.dim(hotspot.ruleKey)}, Category:${chalk.dim(hotspot.securityCategory)}, Probability:${chalk.dim(hotspot.vulnerabilityProbability)}, Created:${chalk.dim(hotspot.creationDate)}`

@@ -13,10 +13,15 @@ async function listIssues(_options: IssueListFilters) {
     let options: IssueListFilters = {
       organization: contextConfig.organization,
       project: contextConfig.projectKey,
-      ..._options
+      ..._options,
     };
 
     const data = await searchIssues(options);
+
+    if (_options.json) {
+      console.log(JSON.stringify(data, null, 2));
+      return;
+    }
 
     if (data.issues.length === 0) {
       console.log('No issues found.');
@@ -61,7 +66,7 @@ async function showIssue(issueId: string, _options: IssueShowOptions) {
     const { fix, ...optionsWithoutFix } = _options;
     let options: Omit<IssueShowOptions, 'fix'> = {
       organization: contextConfig.organization,
-      ...optionsWithoutFix
+      ...optionsWithoutFix,
     };
     const [issueResponse, snippetResponse] = await Promise.all([
       getIssue(issueId, options.organization),
@@ -77,6 +82,21 @@ async function showIssue(issueId: string, _options: IssueShowOptions) {
 
     const ruleResp = await getRule(issue.rule, options.organization);
 
+    if (_options.json) {
+      console.log(
+        JSON.stringify(
+          {
+            issue: issueResponse,
+            rule: ruleResp,
+            snippet: snippetResponse,
+          },
+          null,
+          2
+        )
+      );
+      return;
+    }
+
     const issueOutput = formatIssueDetails(issue, ruleResp, snippetResponse);
 
     console.log(issueOutput);
@@ -91,17 +111,17 @@ async function showIssue(issueId: string, _options: IssueShowOptions) {
 
 export function createIssueCommands() {
   const issueCmd = new Command('issue');
-  issueCmd.description('Manage issues');
+  issueCmd.description('Search and review issues');
 
   issueCmd
     .command('list')
     .description('List project issues')
-    .option('--project <key>', 'Project key to filter by')
+    .option('-p, --project <key>', 'Project key to filter by')
     .option(
       '--assignee <assignees...>',
       'Assignee logins to filter by (can specify multiple)'
     )
-    .option('--organization <org>', 'Organization to filter by')
+    .option('-o, --organization <org>', 'Organization to filter by')
     .option(
       '--severity <severities...>',
       'Severities to filter by: INFO, LOW, MEDIUM, HIGH, BLOCKER (can specify multiple)'
@@ -116,6 +136,7 @@ export function createIssueCommands() {
       'Maximum number of issues to return (default: 20)',
       parseInt
     )
+    .option('--json', 'Return raw JSON response')
     .action(async (options) => {
       await listIssues(options);
     });
@@ -124,6 +145,7 @@ export function createIssueCommands() {
     .command('show <id>')
     .option('--organization <org>', 'Organization to filter by')
     .option('--fix', 'Automatically fix the issue with configured LLM')
+    .option('--json', 'Return raw JSON response')
     .description('Show detailed information about a specific issue')
     .action((id: string, options: IssueShowOptions) => {
       showIssue(id, options);

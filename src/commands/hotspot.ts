@@ -13,10 +13,15 @@ async function listHotspots(options: HotspotListFilters) {
     let params: HotspotListFilters = {
       organization: contextConfig.organization,
       project: contextConfig.projectKey,
-      ...options
+      ...options,
     };
 
     const data = await searchHotspots(params);
+
+    if (options.json) {
+      console.log(JSON.stringify(data, null, 2));
+      return;
+    }
 
     if (data.hotspots.length === 0) {
       console.log('No hotspots found.');
@@ -49,13 +54,18 @@ async function showHotspot(hotspotId: string, options: HotspotShowFilters) {
     const contextConfig = getSonarProjectConfig();
     let params: HotspotShowFilters = {
       organization: contextConfig.organization,
-      ...options
+      ...options,
     };
 
     const hotspot = await getHotspot(hotspotId, params);
     if (!hotspot) {
       console.error(`Hotspot with ID '${hotspotId}' not found.`);
       process.exit(1);
+    }
+
+    if (options.json) {
+      console.log(JSON.stringify(hotspot, null, 2));
+      return;
     }
 
     const hotspotOutput = formatHotspotDetails(hotspot);
@@ -72,13 +82,13 @@ async function showHotspot(hotspotId: string, options: HotspotShowFilters) {
 
 export function createHotspotCommands() {
   const hotspotCmd = new Command('hotspot');
-  hotspotCmd.description('Manage security hotspots');
+  hotspotCmd.description('Search and review security hotspots');
 
   hotspotCmd
     .command('list')
     .description('List security hotspots')
-    .option('--project <key>', 'Project key to filter by')
-    .option('--organization <org>', 'Organization to filter by')
+    .option('-p, --project <key>', 'Project key to filter by')
+    .option('-o, --organization <org>', 'Organization to filter by')
     .option(
       '--status <statuses...>',
       'Statuses to filter by: TO_REVIEW, REVIEWED (can specify multiple)'
@@ -89,12 +99,14 @@ export function createHotspotCommands() {
       'Maximum number of hotspots to return (default: 20)',
       parseInt
     )
+    .option('--json', 'Return raw JSON response')
     .action(listHotspots);
 
   hotspotCmd
     .command('show <id>')
     .option('--organization <org>', 'Organization to filter by')
     .option('--fix', 'Automatically fix the hotspot with configured LLM')
+    .option('--json', 'Return raw JSON response')
     .description('Show detailed information about a specific hotspot')
     .action(showHotspot);
 

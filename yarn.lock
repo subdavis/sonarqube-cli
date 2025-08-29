@@ -2168,8 +2168,7 @@ __metadata:
     turndown: "npm:^7.2.1"
     typescript: "npm:^5.3.0"
   bin:
-    name: snr
-    path: ./dist/index.js
+    snr: ./dist/index.js
   languageName: unknown
   linkType: soft
 

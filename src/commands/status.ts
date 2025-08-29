@@ -8,30 +8,26 @@ interface SystemStatus {
   status: string;
 }
 
-
 export function createStatusCommand(): Command {
   const statusCmd = new Command('status');
-  statusCmd
-    .description('Check system status')
-    .action(async () => {
-      try {
-        // Call system/status
-        const response = await client.get<SystemStatus>('/api/system/status');
-        const { data } = response;
+  statusCmd.description('Check system status').action(async () => {
+    try {
+      // Call system/status
+      const response = await client.get<SystemStatus>('/api/system/status');
+      const { data } = response;
 
-        console.log(chalk.bold('SonarQube System Status\n'));
+      console.log(chalk.bold('SonarQube System Status\n'));
 
-        console.log(`${chalk.blue('Server URL:')} ${client.defaults.baseURL}`);
-        console.log(`${chalk.blue('Status:')} ${getStatusColor(data.status)}`);
-        console.log(`${chalk.blue('Version:')} ${data.version}`);
-        console.log(`${chalk.blue('ID:')} ${data.id}`);
-
-      } catch (error) {
-        console.error(chalk.red('Error checking system status:'));
-        console.error(error instanceof Error ? error.message : String(error));
-        process.exit(1);
-      }
-    });
+      console.log(`${chalk.blue('Server URL:')} ${client.defaults.baseURL}`);
+      console.log(`${chalk.blue('Status:')} ${getStatusColor(data.status)}`);
+      console.log(`${chalk.blue('Version:')} ${data.version}`);
+      console.log(`${chalk.blue('ID:')} ${data.id}`);
+    } catch (error) {
+      console.error(chalk.red('Error checking system status:'));
+      console.error(error instanceof Error ? error.message : String(error));
+      process.exit(1);
+    }
+  });
 
   return statusCmd;
 }
@@ -49,4 +45,3 @@ function getStatusColor(status: string): string {
       return chalk.gray(status);
   }
 }
-

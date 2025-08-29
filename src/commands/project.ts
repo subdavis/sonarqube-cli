@@ -14,10 +14,15 @@ async function listProjects(_options: ProjectListFilters) {
       ...{
         organization: contextConfig.organization,
       },
-      ..._options
+      ..._options,
     };
 
     const data = await searchProjects(options);
+
+    if (_options.json) {
+      console.log(JSON.stringify(data, null, 2));
+      return;
+    }
 
     if (data.components.length === 0) {
       console.log('No projects found.');
@@ -39,20 +44,21 @@ async function listProjects(_options: ProjectListFilters) {
 
 export function createProjectCommands(): Command {
   const projectCommand = new Command('project');
-  projectCommand.description('Manage SonarQube projects');
+  projectCommand.description('Show SonarQube projects');
 
   projectCommand
     .command('list')
     .description('List projects')
-    .option('--organization <org>', 'Filter by organization')
-    .option('--q <query>', 'Search query for project names and keys')
-    .option('--favorites', 'Show only favorite projects')
-    .option('--page <number>', 'Page number (1-based)', (val) =>
+    .option('-o, --organization <org>', 'Filter by organization')
+    .option('-q, --query <query>', 'Search query for project names and keys')
+    .option('-f, --favorites', 'Show only favorite projects')
+    .option('-p, --page <number>', 'Page number (1-based)', (val) =>
       parseInt(val, 10)
     )
     .option('--page-size <number>', 'Page size (max 500)', (val) =>
       parseInt(val, 10)
     )
+    .option('--json', 'Return raw JSON response')
     .action(async (options) => {
       await listProjects({
         organization: options.organization,
@@ -60,6 +66,7 @@ export function createProjectCommands(): Command {
         favorites: options.favorites,
         p: options.page,
         ps: options.pageSize,
+        json: options.json,
       });
     });
 
