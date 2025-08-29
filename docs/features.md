@@ -21,6 +21,7 @@ Other docs can be found at https://docs.sonarsource.com/sonarqube-server/2025.1/
 ## CLI Commands to build
 
 - The API Spec for SQ Server lives in `./api-spec.json`
+- All commands should have a `--json` option to return the raw JSON response and preempt pretty printing.
 
 ### List Project Issues
 
@@ -111,3 +112,4 @@ This section describes what I've changed in the feature spec since the last time
 
 - Added section about AI remediation
 - Added pr number and branch name to list filters
+- Added `--json` feature

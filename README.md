@@ -7,6 +7,10 @@ Command line interface for SonarQube Server API.
 - `npm install -g sonarqube-cli`
 - The `snr` command should now be installed.
 
+| List issues                                  | Show Issue Details                                  | Show hotspot details                                    |
+| -------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------- |
+| ![list issues](./docs/images/issue_list.png) | ![show issue details](./docs/images/issue_show.png) | ![show hotspot details](./docs/images/hotspot_show.png) |
+
 ## Configuration and Usage
 
 `snr` can be configured according to the table below.

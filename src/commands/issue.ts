@@ -69,6 +69,7 @@ async function showIssue(issueId: string, _options: IssueShowOptions) {
     ]);
 
     const issue = issueResponse.issues[0];
+
     if (!issue) {
       console.error(`Issue with ID '${issueId}' not found.`);
       process.exit(1);
