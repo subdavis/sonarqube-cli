@@ -1,5 +1,7 @@
 # SonarQube CLI
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sonarqube-cli&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sonarqube-cli) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sonarqube-cli&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sonarqube-cli) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sonarqube-cli&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=sonarqube-cli) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sonarqube-cli&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=sonarqube-cli)
+
 Command line interface for SonarQube Server API.
 
 ## Installation
