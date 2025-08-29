@@ -10,13 +10,12 @@ async function listProjects(_options: ProjectListFilters) {
   try {
     const contextConfig = getSonarProjectConfig();
 
-    let options: ProjectListFilters = Object.assign(
-      {},
-      {
+    let options: ProjectListFilters = {
+      ...{
         organization: contextConfig.organization,
       },
-      _options
-    );
+      ..._options
+    };
 
     const data = await searchProjects(options);
 

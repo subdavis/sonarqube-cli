@@ -10,14 +10,11 @@ async function listHotspots(options: HotspotListFilters) {
   try {
     const contextConfig = getSonarProjectConfig();
 
-    let params: HotspotListFilters = Object.assign(
-      {},
-      {
-        organization: contextConfig.organization,
-        project: contextConfig.projectKey,
-      },
-      options
-    );
+    let params: HotspotListFilters = {
+      organization: contextConfig.organization,
+      project: contextConfig.projectKey,
+      ...options
+    };
 
     const data = await searchHotspots(params);
 
@@ -50,11 +47,10 @@ async function listHotspots(options: HotspotListFilters) {
 async function showHotspot(hotspotId: string, options: HotspotShowFilters) {
   try {
     const contextConfig = getSonarProjectConfig();
-    let params: HotspotShowFilters = Object.assign(
-      {},
-      { organization: contextConfig.organization },
-      options
-    );
+    let params: HotspotShowFilters = {
+      organization: contextConfig.organization,
+      ...options
+    };
 
     const hotspot = await getHotspot(hotspotId, params);
     if (!hotspot) {

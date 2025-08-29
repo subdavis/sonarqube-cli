@@ -4,11 +4,12 @@ import { formatHtml } from './html';
 import { Hotspot, HotspotShowResponse } from '../types';
 
 export function formatHotspot(hotspot: Hotspot) {
+  const lineInfo = hotspot.line ? chalk.dim(`:${hotspot.line}`) : '';
   return indent(
     [
       `${chalk.bold.underline(hotspot.key)}: ${chalk.reset(hotspot.message)}`,
       indent(
-        `${chalk.blue.dim(hotspot.component)}${hotspot.line ? chalk.dim(`:${hotspot.line}`) : ''}`
+        `${chalk.blue.dim(hotspot.component)}${lineInfo}`
       ),
       chalk.blue(
         indent(

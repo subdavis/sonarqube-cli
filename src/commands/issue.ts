@@ -10,14 +10,11 @@ async function listIssues(_options: IssueListFilters) {
   try {
     const contextConfig = getSonarProjectConfig();
 
-    let options: IssueListFilters = Object.assign(
-      {},
-      {
-        organization: contextConfig.organization,
-        project: contextConfig.projectKey,
-      },
-      _options
-    );
+    let options: IssueListFilters = {
+      organization: contextConfig.organization,
+      project: contextConfig.projectKey,
+      ..._options
+    };
 
     const data = await searchIssues(options);
 
@@ -60,12 +57,12 @@ async function listIssues(_options: IssueListFilters) {
 async function showIssue(issueId: string, _options: IssueShowOptions) {
   try {
     const contextConfig = getSonarProjectConfig();
-    let options: Omit<IssueShowOptions, 'fix'> = Object.assign(
-      {},
-      { organization: contextConfig.organization },
-      _options,
-      { fix: undefined }
-    );
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { fix, ...optionsWithoutFix } = _options;
+    let options: Omit<IssueShowOptions, 'fix'> = {
+      organization: contextConfig.organization,
+      ...optionsWithoutFix
+    };
     const [issueResponse, snippetResponse] = await Promise.all([
       getIssue(issueId, options.organization),
       getIssueSnippet(issueId, options.organization),
