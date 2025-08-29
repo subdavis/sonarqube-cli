@@ -11,12 +11,12 @@ Command line interface for SonarQube Server API.
 
 `snr` can be configured according to the table below.
 
-| Env Variable     | `sonar-project.properties` | Command Line     | Required | Default |
-| ---------------- | -------------------------- | ---------------- | -------- | ------- |
-| `SONAR_TOKEN`    | `sonar.token`              | none             | yes      | None    |
-| `SONAR_HOST_URL` | `sonar.host.url`           | `--base-url`     | yes      | None    |
-| n/a              | `sonar.projectKey`         | `--project`      | no       | None    |
-| n/a              | `sonar.organization`       | `--organization` | \*       | None    |
+| Env Variable     | `sonar-project.properties` | Command Line     | Required   |
+| ---------------- | -------------------------- | ---------------- | ---------- |
+| `SONAR_TOKEN`    | `sonar.token`              | none             | yes        |
+| `SONAR_HOST_URL` | `sonar.host.url`           | `--base-url`     | yes        |
+| n/a              | `sonar.projectKey`         | `--project`      | no         |
+| n/a              | `sonar.organization`       | `--organization` | cloud only |
 
 Precedence:
 
