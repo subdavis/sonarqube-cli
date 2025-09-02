@@ -90,7 +90,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "ps",
@@ -129,7 +134,9 @@
               "required": false,
               "internal": false,
               "exampleValue": "REPORT",
-              "possibleValues": ["REPORT"]
+              "possibleValues": [
+                "REPORT"
+              ]
             }
           ]
         },
@@ -223,7 +230,10 @@
               "description": "Comma-separated list of the optional fields to be returned in response.",
               "required": false,
               "internal": false,
-              "possibleValues": ["scannerContext", "warnings"]
+              "possibleValues": [
+                "scannerContext",
+                "warnings"
+              ]
             },
             {
               "key": "id",
@@ -344,7 +354,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "branch",
@@ -397,7 +412,13 @@
               "description": "Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>BRC - Sub-projects</li><li>DIR - Directories</li><li>FIL - Files</li><li>TRK - Projects</li><li>UTS - Test Files</li></ul>",
               "required": false,
               "internal": false,
-              "possibleValues": ["BRC", "DIR", "FIL", "TRK", "UTS"]
+              "possibleValues": [
+                "BRC",
+                "DIR",
+                "FIL",
+                "TRK",
+                "UTS"
+              ]
             },
             {
               "key": "s",
@@ -406,7 +427,11 @@
               "internal": false,
               "defaultValue": "name",
               "exampleValue": "name, path",
-              "possibleValues": ["name", "path", "qualifier"]
+              "possibleValues": [
+                "name",
+                "path",
+                "qualifier"
+              ]
             },
             {
               "key": "strategy",
@@ -414,7 +439,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "all",
-              "possibleValues": ["all", "children", "leaves"]
+              "possibleValues": [
+                "all",
+                "children",
+                "leaves"
+              ]
             }
           ]
         }
@@ -601,14 +630,20 @@
               "description": "Resolution of the Security Hotspot when new status is REVIEWED, otherwise must not be set.",
               "required": false,
               "internal": false,
-              "possibleValues": ["FIXED", "SAFE"]
+              "possibleValues": [
+                "FIXED",
+                "SAFE"
+              ]
             },
             {
               "key": "status",
               "description": "New status of the Security Hotspot.",
               "required": true,
               "internal": false,
-              "possibleValues": ["TO_REVIEW", "REVIEWED"]
+              "possibleValues": [
+                "TO_REVIEW",
+                "REVIEWED"
+              ]
             }
           ]
         },
@@ -655,7 +690,12 @@
               "description": "If 'projectKey' is provided, returns only Security Hotspots assigned to the current user",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "p",
@@ -685,7 +725,10 @@
               "description": "If 'projectKey' is provided and if status is 'REVIEWED', only Security Hotspots with the specified resolution are returned.",
               "required": false,
               "internal": false,
-              "possibleValues": ["FIXED", "SAFE"]
+              "possibleValues": [
+                "FIXED",
+                "SAFE"
+              ]
             },
             {
               "key": "sinceLeakPeriod",
@@ -693,14 +736,22 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "status",
               "description": "If 'projectKey' is provided, only Security Hotspots with the specified status are returned.",
               "required": false,
               "internal": false,
-              "possibleValues": ["TO_REVIEW", "REVIEWED"]
+              "possibleValues": [
+                "TO_REVIEW",
+                "REVIEWED"
+              ]
             }
           ]
         },
@@ -984,7 +1035,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "set_severity",
@@ -1337,14 +1393,24 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "assigned",
               "description": "To retrieve assigned or unassigned issues",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "assignees",
@@ -1429,7 +1495,10 @@
               "internal": false,
               "defaultValue": "count",
               "deprecatedSince": "7.9",
-              "possibleValues": ["count", "effort"]
+              "possibleValues": [
+                "count",
+                "effort"
+              ]
             },
             {
               "key": "facets",
@@ -1469,7 +1538,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,LOW",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "impactSoftwareQualities",
@@ -1477,7 +1552,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAINTAINABILITY,RELIABILITY",
-              "possibleValues": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
+              "possibleValues": [
+                "MAINTAINABILITY",
+                "RELIABILITY",
+                "SECURITY"
+              ]
             },
             {
               "key": "issueStatuses",
@@ -1513,7 +1592,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "organization",
@@ -1619,7 +1703,12 @@
               "description": "To match resolved or unresolved issues",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "rules",
@@ -1665,7 +1754,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "sonarsourceSecurity",
@@ -1728,7 +1822,11 @@
               "internal": false,
               "exampleValue": "CODE_SMELL,BUG",
               "deprecatedSince": "25 Aug, 2023",
-              "possibleValues": ["CODE_SMELL", "BUG", "VULNERABILITY"]
+              "possibleValues": [
+                "CODE_SMELL",
+                "BUG",
+                "VULNERABILITY"
+              ]
             }
           ]
         },
@@ -1897,7 +1995,11 @@
               "description": "New type",
               "required": true,
               "internal": false,
-              "possibleValues": ["CODE_SMELL", "BUG", "VULNERABILITY"]
+              "possibleValues": [
+                "CODE_SMELL",
+                "BUG",
+                "VULNERABILITY"
+              ]
             }
           ]
         },
@@ -2010,7 +2112,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "periods,metrics",
-              "possibleValues": ["metrics", "periods"]
+              "possibleValues": [
+                "metrics",
+                "periods"
+              ]
             },
             {
               "key": "branch",
@@ -2101,7 +2206,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "periods,metrics",
-              "possibleValues": ["metrics", "periods"]
+              "possibleValues": [
+                "metrics",
+                "periods"
+              ]
             },
             {
               "key": "asc",
@@ -2109,7 +2217,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "baseComponentId",
@@ -2162,7 +2275,9 @@
               "description": "Sort measures by leak period or not ?. The 's' parameter must contain the 'metricPeriod' value.",
               "required": false,
               "internal": false,
-              "possibleValues": ["1"]
+              "possibleValues": [
+                "1"
+              ]
             },
             {
               "key": "metricSort",
@@ -2177,7 +2292,10 @@
               "required": false,
               "internal": false,
               "defaultValue": "all",
-              "possibleValues": ["all", "withMeasuresOnly"]
+              "possibleValues": [
+                "all",
+                "withMeasuresOnly"
+              ]
             },
             {
               "key": "p",
@@ -2216,7 +2334,13 @@
               "description": "Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>BRC - Sub-projects</li><li>DIR - Directories</li><li>FIL - Files</li><li>TRK - Projects</li><li>UTS - Test Files</li></ul>",
               "required": false,
               "internal": false,
-              "possibleValues": ["BRC", "DIR", "FIL", "TRK", "UTS"]
+              "possibleValues": [
+                "BRC",
+                "DIR",
+                "FIL",
+                "TRK",
+                "UTS"
+              ]
             },
             {
               "key": "s",
@@ -2239,7 +2363,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "all",
-              "possibleValues": ["all", "leaves", "children"]
+              "possibleValues": [
+                "all",
+                "leaves",
+                "children"
+              ]
             }
           ]
         },
@@ -2403,7 +2531,9 @@
               "required": false,
               "internal": false,
               "defaultValue": "EmailNotificationChannel",
-              "possibleValues": ["EmailNotificationChannel"]
+              "possibleValues": [
+                "EmailNotificationChannel"
+              ]
             },
             {
               "key": "login",
@@ -2457,7 +2587,9 @@
               "required": false,
               "internal": false,
               "defaultValue": "EmailNotificationChannel",
-              "possibleValues": ["EmailNotificationChannel"]
+              "possibleValues": [
+                "EmailNotificationChannel"
+              ]
             },
             {
               "key": "login",
@@ -2826,7 +2958,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "organization",
@@ -2858,7 +2995,9 @@
               "defaultValue": "TRK",
               "deprecatedKey": "qualifier",
               "deprecatedKeySince": "6.6",
-              "possibleValues": ["TRK"]
+              "possibleValues": [
+                "TRK"
+              ]
             },
             {
               "key": "templateId",
@@ -3277,7 +3416,9 @@
               "description": "Project qualifier. Filter the results with the specified qualifier. Possible values are:<ul><li>TRK - Projects</li></ul>",
               "required": false,
               "internal": false,
-              "possibleValues": ["TRK"]
+              "possibleValues": [
+                "TRK"
+              ]
             }
           ]
         },
@@ -3326,7 +3467,9 @@
               "required": false,
               "internal": false,
               "defaultValue": "TRK",
-              "possibleValues": ["TRK"]
+              "possibleValues": [
+                "TRK"
+              ]
             },
             {
               "key": "templateId",
@@ -3409,7 +3552,10 @@
               "required": false,
               "internal": false,
               "defaultValue": "OTHER",
-              "possibleValues": ["VERSION", "OTHER"]
+              "possibleValues": [
+                "VERSION",
+                "OTHER"
+              ]
             },
             {
               "key": "name",
@@ -3655,6 +3801,8 @@
               "required": true,
               "internal": false,
               "possibleValues": [
+                "reliability_rating",
+                "duplicated_lines_density",
                 "vulnerabilities",
                 "bugs",
                 "security_rating",
@@ -3663,9 +3811,7 @@
                 "ncloc",
                 "coverage",
                 "sqale_index",
-                "alert_status",
-                "reliability_rating",
-                "duplicated_lines_density"
+                "alert_status"
               ]
             },
             {
@@ -4032,7 +4178,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "organization",
@@ -4061,7 +4212,9 @@
               "internal": false,
               "defaultValue": "TRK",
               "deprecatedSince": "8.0",
-              "possibleValues": ["TRK"]
+              "possibleValues": [
+                "TRK"
+              ]
             }
           ]
         },
@@ -4080,7 +4233,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "from",
@@ -4166,7 +4324,10 @@
               "description": "Whether the created project should be visible to everyone, or only specific user/groups.<br/>If no visibility is specified, the default project visibility of the organization will be used.",
               "required": false,
               "internal": false,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         },
@@ -4208,7 +4369,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "organization",
@@ -4255,7 +4421,9 @@
               "internal": false,
               "defaultValue": "TRK",
               "deprecatedSince": "8.0",
-              "possibleValues": ["TRK"]
+              "possibleValues": [
+                "TRK"
+              ]
             }
           ]
         },
@@ -4308,7 +4476,10 @@
               "description": "New visibility",
               "required": true,
               "internal": false,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         }
@@ -4332,7 +4503,9 @@
               "description": "Only json response format is available",
               "required": false,
               "internal": false,
-              "possibleValues": ["json"]
+              "possibleValues": [
+                "json"
+              ]
             },
             {
               "key": "id",
@@ -4461,7 +4634,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "GT",
-              "possibleValues": ["LT", "GT"]
+              "possibleValues": [
+                "LT",
+                "GT"
+              ]
             },
             {
               "key": "organization",
@@ -4781,7 +4957,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -4958,7 +5138,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "GT",
-              "possibleValues": ["LT", "GT"]
+              "possibleValues": [
+                "LT",
+                "GT"
+              ]
             },
             {
               "key": "organization",
@@ -5004,7 +5187,12 @@
               "description": "Reset severity and parameters of activated rule. Set the values defined on parent profile or from rule default values.",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "rule",
@@ -5043,7 +5231,12 @@
               "description": "Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set.",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "active_severities",
@@ -5065,7 +5258,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "available_since",
@@ -5100,7 +5298,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "impactSoftwareQualities",
@@ -5108,7 +5312,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAINTAINABILITY,RELIABILITY",
-              "possibleValues": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
+              "possibleValues": [
+                "MAINTAINABILITY",
+                "RELIABILITY",
+                "SECURITY"
+              ]
             },
             {
               "key": "inheritance",
@@ -5116,14 +5324,23 @@
               "required": false,
               "internal": false,
               "exampleValue": "INHERITED,OVERRIDES",
-              "possibleValues": ["NONE", "INHERITED", "OVERRIDES"]
+              "possibleValues": [
+                "NONE",
+                "INHERITED",
+                "OVERRIDES"
+              ]
             },
             {
               "key": "is_template",
               "description": "Filter template rules",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "languages",
@@ -5228,7 +5445,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "name",
-              "possibleValues": ["name", "updatedAt", "createdAt", "key"]
+              "possibleValues": [
+                "name",
+                "updatedAt",
+                "createdAt",
+                "key"
+              ]
             },
             {
               "key": "severities",
@@ -5283,7 +5505,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "READY",
-              "possibleValues": ["BETA", "DEPRECATED", "READY", "REMOVED"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY",
+                "REMOVED"
+              ]
             },
             {
               "key": "tags",
@@ -5911,7 +6138,12 @@
               "description": "Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set.",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "active_severities",
@@ -5933,7 +6165,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "available_since",
@@ -5968,7 +6205,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "impactSoftwareQualities",
@@ -5976,7 +6219,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAINTAINABILITY,RELIABILITY",
-              "possibleValues": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
+              "possibleValues": [
+                "MAINTAINABILITY",
+                "RELIABILITY",
+                "SECURITY"
+              ]
             },
             {
               "key": "inheritance",
@@ -5984,14 +6231,23 @@
               "required": false,
               "internal": false,
               "exampleValue": "INHERITED,OVERRIDES",
-              "possibleValues": ["NONE", "INHERITED", "OVERRIDES"]
+              "possibleValues": [
+                "NONE",
+                "INHERITED",
+                "OVERRIDES"
+              ]
             },
             {
               "key": "is_template",
               "description": "Filter template rules",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "languages",
@@ -6096,7 +6352,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "name",
-              "possibleValues": ["name", "updatedAt", "createdAt", "key"]
+              "possibleValues": [
+                "name",
+                "updatedAt",
+                "createdAt",
+                "key"
+              ]
             },
             {
               "key": "severities",
@@ -6151,7 +6412,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "READY",
-              "possibleValues": ["BETA", "DEPRECATED", "READY", "REMOVED"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY",
+                "REMOVED"
+              ]
             },
             {
               "key": "tags",
@@ -6536,7 +6802,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -6728,7 +6998,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "language",
@@ -6991,7 +7266,12 @@
               "description": "Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set.",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "active_severities",
@@ -7013,7 +7293,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "available_since",
@@ -7047,7 +7332,7 @@
               "description": "Comma-separated list of the fields to be returned in response. All the fields are returned by default, except actives.Since 5.5, following fields have been deprecated :<ul><li>\"defaultDebtRemFn\" becomes \"defaultRemFn\"</li><li>\"debtRemFn\" becomes \"remFn\"</li><li>\"effortToFixDescription\" becomes \"gapDescription\"</li><li>\"debtOverloaded\" becomes \"remFnOverloaded\"</li></ul>",
               "required": false,
               "internal": false,
-              "exampleValue": "params,effortToFixDescription",
+              "exampleValue": "defaultDebtRemFn,updatedAt",
               "possibleValues": [
                 "actives",
                 "cleanCodeAttribute",
@@ -7118,7 +7403,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "impactSoftwareQualities",
@@ -7126,7 +7417,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAINTAINABILITY,RELIABILITY",
-              "possibleValues": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
+              "possibleValues": [
+                "MAINTAINABILITY",
+                "RELIABILITY",
+                "SECURITY"
+              ]
             },
             {
               "key": "include_external",
@@ -7134,7 +7429,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "inheritance",
@@ -7142,14 +7442,23 @@
               "required": false,
               "internal": false,
               "exampleValue": "INHERITED,OVERRIDES",
-              "possibleValues": ["NONE", "INHERITED", "OVERRIDES"]
+              "possibleValues": [
+                "NONE",
+                "INHERITED",
+                "OVERRIDES"
+              ]
             },
             {
               "key": "is_template",
               "description": "Filter template rules",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "languages",
@@ -7278,7 +7587,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "name",
-              "possibleValues": ["name", "updatedAt", "createdAt", "key"]
+              "possibleValues": [
+                "name",
+                "updatedAt",
+                "createdAt",
+                "key"
+              ]
             },
             {
               "key": "severities",
@@ -7333,7 +7647,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "READY",
-              "possibleValues": ["BETA", "DEPRECATED", "READY", "REMOVED"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY",
+                "REMOVED"
+              ]
             },
             {
               "key": "tags",
@@ -7399,7 +7718,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "key",
@@ -7520,7 +7844,11 @@
               "description": "Type of the remediation function of the rule",
               "required": false,
               "internal": false,
-              "possibleValues": ["LINEAR", "LINEAR_OFFSET", "CONSTANT_ISSUE"]
+              "possibleValues": [
+                "LINEAR",
+                "LINEAR_OFFSET",
+                "CONSTANT_ISSUE"
+              ]
             },
             {
               "key": "remediation_fy_gap_multiplier",
@@ -7547,7 +7875,12 @@
               "description": "Rule status (Only when updating a custom rule)",
               "required": false,
               "internal": false,
-              "possibleValues": ["BETA", "DEPRECATED", "READY", "REMOVED"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY",
+                "REMOVED"
+              ]
             },
             {
               "key": "tags",
@@ -7809,7 +8142,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "from",
@@ -8055,7 +8393,11 @@
               "description": "Comma-separated list of the fields to be returned in response. All the fields are returned by default.",
               "required": false,
               "internal": false,
-              "possibleValues": ["name", "description", "membersCount"]
+              "possibleValues": [
+                "name",
+                "description",
+                "membersCount"
+              ]
             },
             {
               "key": "organization",
@@ -8186,7 +8528,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         }
@@ -8348,7 +8694,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },

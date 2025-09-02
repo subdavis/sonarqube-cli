@@ -1,10 +1,10 @@
 import { Command } from 'commander';
 import { getSonarProjectConfig } from '../context';
-import { ProjectListFilters } from '../types/project';
+import { ProjectListFilters, ProjectCreateFilters } from '../types/project';
 import { handleApiError } from '../utils/error-handler';
 import { formatProject } from '../formatters/project';
 
-import { searchProjects } from '../api';
+import { searchProjects, createProject } from '../api';
 
 async function listProjects(_options: ProjectListFilters) {
   try {
@@ -42,6 +42,38 @@ async function listProjects(_options: ProjectListFilters) {
   }
 }
 
+async function createNewProject(overrides: ProjectCreateFilters) {
+  try {
+    const contextConfig = getSonarProjectConfig();
+    const fromContext: Partial<ProjectCreateFilters> = {
+      organization: contextConfig.organization,
+      project: contextConfig.projectKey,
+      mainBranch: contextConfig.branchName,
+      name: contextConfig.projectName,
+    };
+
+    let options: ProjectCreateFilters = {
+      ...fromContext,
+      ...overrides,
+    };
+
+    const data = await createProject(options);
+
+    if (options.json) {
+      console.log(JSON.stringify(data, null, 2));
+      return;
+    }
+
+    const output = `Project created successfully:
+      Key: ${data.project.key}
+      Name: ${data.project.name}
+      Qualifier: ${data.project.qualifier}`;
+    console.log(output);
+  } catch (error) {
+    handleApiError(error, 'creating project');
+  }
+}
+
 export function createProjectCommands(): Command {
   const projectCommand = new Command('project');
   projectCommand.description('Show SonarQube projects');
@@ -59,16 +91,23 @@ export function createProjectCommands(): Command {
       parseInt(val, 10)
     )
     .option('--json', 'Return raw JSON response')
-    .action(async (options) => {
-      await listProjects({
-        organization: options.organization,
-        q: options.q,
-        favorites: options.favorites,
-        p: options.page,
-        ps: options.pageSize,
-        json: options.json,
-      });
-    });
+    .action(listProjects);
+
+  projectCommand
+    .command('create')
+    .description('Create a new project')
+    .option('-n, --name <name>', 'Project name')
+    .option('-p, --project <key>', 'Project key')
+    .option('-o, --organization <org>', 'Organization')
+    .option(
+      '-v, --visibility <visibility>',
+      'Project visibility (public or private)'
+    )
+    .option('-b, --main-branch <branch>', 'Main branch name')
+    .option('--new-code-definition-value <value>', 'New code definition value')
+    .option('--new-code-definition-type <type>', 'New code definition type')
+    .option('--json', 'Return raw JSON response')
+    .action(createNewProject);
 
   return projectCommand;
 }

@@ -76,6 +76,16 @@ Look at `docs/response-example-api-components-search_projects.json`
 - Required filter facets: None
 - Optional filter facets: organization, q (query search)
 
+### Initialize projects
+
+Look at `docs/response-example-api-projects-create.json`
+
+- Base command: `project create`
+- Requires projectName (as --name), projectKey (as --project)
+- Optionally takes organization, visibility, branch, newCodeDefinitionValue, newCodeDefinitionType
+
+name, organization, branch, and key can come from sonar-project.properties
+
 ### Check system status
 
 Look at `docs/response-example-api-system-status.json`
@@ -89,6 +99,8 @@ Call both system/status and system/web_health and show a simple output.
 If the working directory (or somewhere up the tree) has a `sonar-project.properties` file with a specified
 
 - `sonar.projectKey`
+- `sonar.projectName`
+- `sonar.branch.name`
 - `sonar.organization`
 
 Those values should be used. If a user runs a command that accepts either of thse and they weren't provided, please search for them.
@@ -113,3 +125,4 @@ This section describes what I've changed in the feature spec since the last time
 - Added section about AI remediation
 - Added pr number and branch name to list filters
 - Added `--json` feature
+- Added Initialize projects feature

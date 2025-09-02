@@ -10,7 +10,9 @@
     "status": "READY",
     "isTemplate": false,
     "tags": [],
-    "sysTags": ["brain-overload"],
+    "sysTags": [
+      "brain-overload"
+    ],
     "lang": "java",
     "langName": "Java",
     "params": [

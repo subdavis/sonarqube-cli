@@ -11,7 +11,12 @@ import {
   HotspotShowResponse,
   HotspotShowFilters,
 } from './types/hotspot';
-import { ProjectListFilters, ProjectSearchResponse } from './types/project';
+import {
+  ProjectListFilters,
+  ProjectSearchResponse,
+  ProjectCreateFilters,
+  ProjectCreateResponse,
+} from './types/project';
 
 // Issue API calls
 export async function searchIssues(
@@ -101,9 +106,30 @@ export async function searchProjects(
       params: {
         organization: filters.organization,
         q: filters.q,
-        p: filters.p,
-        ps: filters.ps || 100,
+        p: filters.page,
+        ps: filters.pageSize || 100,
         filter: filters.favorites ? 'isFavorite' : undefined,
+      },
+    }
+  );
+  return response.data;
+}
+
+export async function createProject(
+  filters: ProjectCreateFilters
+): Promise<ProjectCreateResponse> {
+  const response = await client.post<ProjectCreateResponse>(
+    '/api/projects/create',
+    null,
+    {
+      params: {
+        name: filters.name,
+        project: filters.project,
+        organization: filters.organization,
+        visibility: filters.visibility,
+        mainBranch: filters.mainBranch,
+        newCodeDefinitionValue: filters.newCodeDefinitionValue,
+        newCodeDefinitionType: filters.newCodeDefinitionType,
       },
     }
   );

@@ -5,7 +5,7 @@ import { createIssueCommands } from './commands/issue';
 import { createHotspotCommands } from './commands/hotspot';
 import { createProjectCommands } from './commands/project';
 import { createStatusCommand } from './commands/status';
-import { setGlobalBaseUrl } from './http';
+import { setGlobalOptions } from './http';
 import pkgData from '../package.json';
 
 const program = new Command();
@@ -26,8 +26,12 @@ program
     ].join('\n')
   )
   .option('--base-url <url>', 'SonarQube server base URL')
+  .option('--dry-run', 'Show what would be done, without making any changes')
   .hook('preAction', (cmd) => {
-    setGlobalBaseUrl(cmd.opts().baseUrl);
+    setGlobalOptions({
+      baseUrl: cmd.opts().baseUrl,
+      dryRun: cmd.opts().dryRun,
+    });
   });
 
 program.addCommand(createIssueCommands());

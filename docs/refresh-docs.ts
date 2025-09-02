@@ -55,6 +55,7 @@ const controllers = [
   { controller: 'api/hotspots', action: 'show' },
   { controller: 'api/components', action: 'search_projects' },
   { controller: 'api/system', action: 'status' },
+  { controller: 'api/projects', action: 'create' },
 ];
 
 controllers.forEach(({ controller, action }) => {

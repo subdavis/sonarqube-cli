@@ -5,6 +5,8 @@ interface SonarProjectConfig {
   projectKey?: string;
   organization?: string;
   host?: string;
+  branchName?: string;
+  projectName?: string;
 }
 
 let sonarProjectConfig: SonarProjectConfig | null = null;
@@ -59,6 +61,8 @@ function loadSonarProjectConfig() {
       projectKey: properties['sonar.projectKey'],
       organization: properties['sonar.organization'],
       host: properties['sonar.host.url'],
+      branchName: properties['sonar.branch.name'],
+      projectName: properties['sonar.projectName'],
     };
   } catch {
     return;

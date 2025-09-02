@@ -28,8 +28,27 @@ export interface ProjectSearchResponse {
 export interface ProjectListFilters {
   organization?: string;
   q?: string;
-  p?: number;
-  ps?: number;
+  page?: number;
+  pageSize?: number;
   favorites?: boolean;
   json?: boolean;
+}
+
+export interface ProjectCreateFilters {
+  name: string;
+  project: string;
+  organization?: string;
+  visibility?: string;
+  mainBranch?: string;
+  newCodeDefinitionValue?: string;
+  newCodeDefinitionType?: string;
+  json?: boolean;
+}
+
+export interface ProjectCreateResponse {
+  project: {
+    key: string;
+    name: string;
+    qualifier: string;
+  };
 }
