@@ -1,9 +1,10 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
-const baseUrl = 'https://sonarcloud.io/';
+const baseUrl = 'https://next.sonarqube.com/sonarqube/';
 const docsUrl = 'api/webservices/list?include_internals=true';
 const exampleUrl = 'api/webservices/response_example';
+const v2Url = 'api/v2/api-docs';
 
 async function fetchJson(
   url: string,
@@ -45,6 +46,7 @@ function getResponseExample(params: { controller: string; action: string }) {
 }
 
 fetchJson(docsUrl, 'api-spec.json');
+fetchJson(v2Url, 'api-v2-spec.json');
 
 const controllers = [
   { controller: 'api/issues', action: 'search' },

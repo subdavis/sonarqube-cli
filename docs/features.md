@@ -86,6 +86,25 @@ Look at `docs/response-example-api-projects-create.json`
 
 name, organization, branch, and key can come from sonar-project.properties
 
+### Dep Risks Issue List
+
+Look at `api-v2-spec.json` endpoint `sca/issues-releases`
+
+- Base command: `risk list`
+- Optional: project, branch, organization, pullRequest, packageManagers, severities, statuses, newlyIntroduced, direct, scope, assignee, page, pageSize
+
+Should match issue list syntax where applicable. If the endpoint takes an array, the option should take a comma separated string.
+
+### Dep Risks Issue Details
+
+Look at `api-v2-spec.json` endpoint `sca/issues-releases/{key}`
+
+- Base command: `risk show {id}`
+
+Show a dependency risk section, a release section.
+
+If it's a vulnerability, show the upgrade options.
+
 ### Check system status
 
 Look at `docs/response-example-api-system-status.json`

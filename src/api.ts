@@ -17,6 +17,7 @@ import {
   ProjectCreateFilters,
   ProjectCreateResponse,
 } from './types/project';
+import { DepRisksListFilters, DepRisksListResponse } from './types/dep-risks';
 
 // Issue API calls
 export async function searchIssues(
@@ -130,6 +131,25 @@ export async function createProject(
         mainBranch: filters.mainBranch,
         newCodeDefinitionValue: filters.newCodeDefinitionValue,
         newCodeDefinitionType: filters.newCodeDefinitionType,
+      },
+    }
+  );
+  return response.data;
+}
+
+// Dependency Risks API calls
+export async function searchDepRisks(
+  filters: DepRisksListFilters
+): Promise<DepRisksListResponse> {
+  const response = await client.get<DepRisksListResponse>(
+    '/api/v2/sca/issues-releases',
+    {
+      params: {
+        ...filters,
+        packageManagers: filters.packageManagers?.join(','),
+        severities: filters.severities?.join(','),
+        statuses: filters.statuses?.join(','),
+        assignees: filters.assignees?.join(','),
       },
     }
   );

@@ -4,62 +4,39 @@
     "pageSize": 100,
     "total": 3
   },
-  "organizations": [
-    {
-      "key": "my-org-key-1",
-      "name": "Foo"
-    },
-    {
-      "key": "my-org-key-2",
-      "name": "Bar"
-    }
-  ],
   "components": [
     {
-      "organization": "my-org-key-1",
       "key": "my_project",
-      "projectId": "project-1-uuid",
-      "projectUuidV4": "00000000-0000-0000-0000-000000000001",
       "name": "My Project 1",
+      "qualifier": "TRK",
       "isFavorite": true,
-      "tags": [
-        "finance",
-        "java"
-      ],
+      "tags": ["finance", "java"],
       "visibility": "public",
-      "isNew": true,
-      "hasPullRequestOrBranchAnalysis": false,
-      "isAiCodeAssured": false
+      "isAiCodeFixEnabled": false,
+      "aiCodeAssurance": "NONE",
+      "containsAiCode": false
     },
     {
-      "organization": "my-org-key-1",
       "key": "another_project",
-      "projectId": "project-2-uuid",
-      "projectUuidV4": "00000000-0000-0000-0000-000000000002",
       "name": "My Project 2",
+      "qualifier": "TRK",
       "isFavorite": false,
       "tags": [],
       "visibility": "public",
-      "isNew": true,
-      "hasPullRequestOrBranchAnalysis": false,
-      "isAiCodeAssured": false
+      "isAiCodeFixEnabled": false,
+      "aiCodeAssurance": "NONE",
+      "containsAiCode": false
     },
     {
-      "organization": "my-org-key-2",
       "key": "third_project",
-      "projectId": "project-3-uuid",
-      "projectUuidV4": "00000000-0000-0000-0000-000000000003",
       "name": "My Project 3",
+      "qualifier": "TRK",
       "isFavorite": false,
-      "tags": [
-        "sales",
-        "offshore",
-        "java"
-      ],
+      "tags": ["sales", "offshore", "java"],
       "visibility": "public",
-      "isNew": true,
-      "hasPullRequestOrBranchAnalysis": false,
-      "isAiCodeAssured": false
+      "isAiCodeFixEnabled": false,
+      "aiCodeAssurance": "NONE",
+      "containsAiCode": false
     }
   ],
   "facets": [

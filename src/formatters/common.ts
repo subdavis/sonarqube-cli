@@ -9,7 +9,10 @@ export function indent(text: string | (() => string)): string {
 }
 
 export function formatSeverity(val: string): string {
-  const severity = val.split(':')[1];
+  let severity = val.split(':')[1];
+  if (!severity) {
+    severity = val;
+  }
   switch (severity.toUpperCase()) {
     case 'INFO':
     case 'LOW':

@@ -5,6 +5,7 @@ import { createIssueCommands } from './commands/issue';
 import { createHotspotCommands } from './commands/hotspot';
 import { createProjectCommands } from './commands/project';
 import { createStatusCommand } from './commands/status';
+import { createDepRisksCommands } from './commands/dep-risks';
 import { setGlobalOptions } from './http';
 import pkgData from '../package.json';
 
@@ -22,6 +23,7 @@ program
       '  snr issue list --project my-project --severity HIGH',
       '  snr hotspot show AZjzzVD1Xsy7a47AllAl',
       '  snr project list --favorites',
+      '  snr risk list --project my-project --severity HIGH CRITICAL',
       '',
     ].join('\n')
   )
@@ -38,6 +40,7 @@ program.addCommand(createIssueCommands());
 program.addCommand(createHotspotCommands());
 program.addCommand(createProjectCommands());
 program.addCommand(createStatusCommand());
+program.addCommand(createDepRisksCommands());
 
 // Show help by default when no command is provided
 if (process.argv.length <= 2) {

@@ -2,7 +2,7 @@
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sonarqube-cli&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sonarqube-cli) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sonarqube-cli&metric=bugs)](https://sonarcloud.io/summary/new_code?id=sonarqube-cli) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sonarqube-cli&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=sonarqube-cli) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sonarqube-cli&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=sonarqube-cli)
 
-Command line interface for SonarQube Server API.
+Command line interface for SonarQube Server and SonarQube Cloud.
 
 ## Installation
 
@@ -28,15 +28,15 @@ Command line interface for SonarQube Server API.
 | n/a              | `sonar.projectKey`         | `--project`      |
 | n/a              | `sonar.organization`       | `--organization` |
 
-```
-~$ snr help
-Usage: snr [options] [command]
+## Useful features
 
+```
 CLI for SonarQube Server & Cloud API
 
 Options:
   -V, --version     output the version number
   --base-url <url>  SonarQube server base URL
+  --dry-run         Show what would be done, without making any changes
   -h, --help        display help for command
 
 Commands:
@@ -44,13 +44,19 @@ Commands:
   hotspot           Search and review security hotspots
   project           Show SonarQube projects
   status            Check system status
+  risk              Search and review dependency risks
   help [command]    display help for command
 
 Examples:
   snr issue list --project my-project --severity HIGH
   snr hotspot show AZjzzVD1Xsy7a47AllAl
-  snr project list --favorites --json
+  snr project list --favorites
+  snr risk list --project my-project --severity HIGH CRITICAL
 ```
+
+- 💻 use the `--json` flag to output JSON
+- 📡 use `--dry-run` to output a CURL command instead of sending a real request.
+- 🤖 use `--fix` (where supported) to pass issue details to a local AI tool like Claude Code.
 
 ## Development
 
@@ -61,9 +67,9 @@ yarn build        # Build for production
 yarn lint         # Lint code
 yarn format       # Format code
 yarn typecheck    # Type check
+yarn validate     # Run everything
 ```
 
-## Contributing
+## Contributing and Feature Requests
 
-- This project uses TS and commander.js
-- `docs/refresh-docs.ts` is used to refresh the API Specs.
+Contributions are welcome. Please log an issue if you'd like to request support for a particular API.
