@@ -12,6 +12,9 @@ dist/
 build/
 *.tsbuildinfo
 
+# Sonarqube
+.scannerwork/
+
 # Environment variables
 .env
 .env.local

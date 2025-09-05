@@ -31,19 +31,21 @@ export function setGlobalOptions({
  */
 export function transformForCloud(config: InternalAxiosRequestConfig) {
   const fullUrl = new URL(config.url!, config.baseURL);
-  
+
   if (!fullUrl.pathname.startsWith('/api/v2')) return;
-  
+
   const cloudPatterns = [
     /sonarcloud/,
     /sonarqube\.us/,
     /sc-dev\d+\.io/,
     /sc-staging\.io/,
   ];
-  
-  const isCloudHost = cloudPatterns.some(pattern => pattern.test(fullUrl.hostname));
+
+  const isCloudHost = cloudPatterns.some((pattern) =>
+    pattern.test(fullUrl.hostname)
+  );
   if (!isCloudHost) return;
-  
+
   if (!fullUrl.hostname.startsWith('api.')) {
     const hostParts = fullUrl.hostname.split('.');
     if (hostParts.length === 2) {
@@ -53,7 +55,7 @@ export function transformForCloud(config: InternalAxiosRequestConfig) {
       fullUrl.hostname = hostParts.join('.');
     }
   }
-  
+
   fullUrl.pathname = fullUrl.pathname.replace(/^\/api\/v2/, '');
   config.baseURL = fullUrl.origin;
   config.url = fullUrl.pathname + fullUrl.search;
