@@ -10,7 +10,10 @@
       "name": "My Project 1",
       "qualifier": "TRK",
       "isFavorite": true,
-      "tags": ["finance", "java"],
+      "tags": [
+        "finance",
+        "java"
+      ],
       "visibility": "public",
       "isAiCodeFixEnabled": false,
       "aiCodeAssurance": "NONE",
@@ -32,7 +35,11 @@
       "name": "My Project 3",
       "qualifier": "TRK",
       "isFavorite": false,
-      "tags": ["sales", "offshore", "java"],
+      "tags": [
+        "sales",
+        "offshore",
+        "java"
+      ],
       "visibility": "public",
       "isAiCodeFixEnabled": false,
       "aiCodeAssurance": "NONE",

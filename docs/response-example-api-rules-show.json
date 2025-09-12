@@ -9,7 +9,9 @@
     "internalKey": "ClassCyclomaticComplexity",
     "template": false,
     "tags": [],
-    "sysTags": ["brain-overload"],
+    "sysTags": [
+      "brain-overload"
+    ],
     "remFnType": "LINEAR_OFFSET",
     "remFnGapMultiplier": "5d",
     "remFnBaseEffort": "10h",

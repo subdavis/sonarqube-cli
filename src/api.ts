@@ -16,8 +16,14 @@ import {
   ProjectSearchResponse,
   ProjectCreateFilters,
   ProjectCreateResponse,
+  ProjectDeleteFilters,
 } from './types/project';
 import { DepRisksListFilters, DepRisksListResponse } from './types/dep-risks';
+import {
+  RuleRepositoriesResponse,
+  RuleSearchResponse,
+  RuleListFilters,
+} from './types/rule';
 
 // Issue API calls
 export async function searchIssues(
@@ -137,6 +143,17 @@ export async function createProject(
   return response.data;
 }
 
+export async function deleteProject(
+  filters: ProjectDeleteFilters
+): Promise<void> {
+  await client.post('/api/projects/bulk_delete', null, {
+    params: {
+      projects: filters.projects?.join(','),
+      analyzedBefore: filters.analyzedBefore,
+    },
+  });
+}
+
 // Dependency Risks API calls
 export async function searchDepRisks(
   filters: DepRisksListFilters
@@ -153,5 +170,34 @@ export async function searchDepRisks(
       },
     }
   );
+  return response.data;
+}
+
+// Rule API calls
+export async function getRuleRepositories(
+  organization?: string
+): Promise<RuleRepositoriesResponse> {
+  const response = await client.get<RuleRepositoriesResponse>(
+    '/api/rules/repositories',
+    {
+      params: { organization },
+    }
+  );
+  return response.data;
+}
+
+export async function searchRules(
+  filters: RuleListFilters
+): Promise<RuleSearchResponse> {
+  const response = await client.get<RuleSearchResponse>('/api/rules/search', {
+    params: {
+      organization: filters.organization,
+      languages: filters.languages?.join(','),
+      repositories: filters.repositories?.join(','),
+      severities: filters.severities?.map((s) => s.toUpperCase()).join(','),
+      types: filters.types?.map((t) => t.toUpperCase()).join(','),
+      ps: filters.limit || 20,
+    },
+  });
   return response.data;
 }

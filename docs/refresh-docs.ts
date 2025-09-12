@@ -51,6 +51,8 @@ fetchJson(v2Url, 'api-v2-spec.json');
 const controllers = [
   { controller: 'api/issues', action: 'search' },
   { controller: 'api/rules', action: 'show' },
+  { controller: 'api/rules', action: 'repositories' },
+  { controller: 'api/rules', action: 'search' },
   { controller: 'api/sources', action: 'issue_snippets' },
   { controller: 'api/sources', action: 'lines' },
   { controller: 'api/hotspots', action: 'search' },
@@ -58,6 +60,8 @@ const controllers = [
   { controller: 'api/components', action: 'search_projects' },
   { controller: 'api/system', action: 'status' },
   { controller: 'api/projects', action: 'create' },
+  { controller: 'api/projects', action: 'delete' },
+  { controller: 'api/projects', action: 'bulk_delete' },
 ];
 
 controllers.forEach(({ controller, action }) => {

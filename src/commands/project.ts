@@ -1,10 +1,10 @@
 import { Command } from 'commander';
 import { getSonarProjectConfig } from '../context';
-import { ProjectListFilters, ProjectCreateFilters } from '../types/project';
+import { ProjectListFilters, ProjectCreateFilters, ProjectDeleteFilters } from '../types/project';
 import { handleApiError } from '../utils/error-handler';
 import { formatProject } from '../formatters/project';
 
-import { searchProjects, createProject } from '../api';
+import { searchProjects, createProject, deleteProject } from '../api';
 
 async function listProjects(_options: ProjectListFilters) {
   try {
@@ -74,6 +74,30 @@ async function createNewProject(overrides: ProjectCreateFilters) {
   }
 }
 
+async function deleteProjects(options: ProjectDeleteFilters) {
+  try {
+    if (!options.projects && !options.analyzedBefore) {
+      console.error('Error: Either --project or --analyzed-before must be specified');
+      process.exit(1);
+    }
+
+    await deleteProject(options);
+
+    if (options.json) {
+      console.log(JSON.stringify({ message: 'Projects deleted successfully' }, null, 2));
+    } else {
+      const projectCount = options.projects?.length || 0;
+      if (projectCount > 0) {
+        console.log(`Successfully deleted ${projectCount} project(s): ${options.projects!.join(', ')}`);
+      } else {
+        console.log(`Successfully deleted projects analyzed before ${options.analyzedBefore}`);
+      }
+    }
+  } catch (error) {
+    handleApiError(error, 'deleting projects');
+  }
+}
+
 export function createProjectCommands(): Command {
   const projectCommand = new Command('project');
   projectCommand.description('Show SonarQube projects');
@@ -108,6 +132,14 @@ export function createProjectCommands(): Command {
     .option('--new-code-definition-type <type>', 'New code definition type')
     .option('--json', 'Return raw JSON response')
     .action(createNewProject);
+
+  projectCommand
+    .command('delete')
+    .description('Delete projects')
+    .option('-p, --project <keys...>', 'Project keys to delete')
+    .option('--analyzed-before <date>', 'Delete projects analyzed before this date (YYYY-MM-DD)')
+    .option('--json', 'Return raw JSON response')
+    .action(deleteProjects);
 
   return projectCommand;
 }

@@ -86,6 +86,16 @@ Look at `docs/response-example-api-projects-create.json`
 
 name, organization, branch, and key can come from sonar-project.properties
 
+### Delete projects
+
+Use the projects/bulk_delete API
+
+- Base command: `project delete`
+- Optional project key `--project` (multiple)
+- Optional `analyzedBefore`
+
+At least one of the two is required.
+
 ### Dep Risks Issue List
 
 Look at `api-v2-spec.json` endpoint `sca/issues-releases`
@@ -104,6 +114,18 @@ Look at `api-v2-spec.json` endpoint `sca/issues-releases/{key}`
 Show a dependency risk section, a release section.
 
 If it's a vulnerability, show the upgrade options.
+
+### Rules repos
+
+- API `api/rules/repositories`
+- Look at `docs/response-example-api-rules-repositories.json`
+- Base command: `rule repos`
+
+## Rules list
+
+- Look at `docs/response-example-api-rules-search.json`
+- API `api/rules/search`
+- Base command: `rule list`
 
 ### Check system status
 
@@ -145,3 +167,5 @@ This section describes what I've changed in the feature spec since the last time
 - Added pr number and branch name to list filters
 - Added `--json` feature
 - Added Initialize projects feature
+- Added projects delete
+- Added rules list and repos

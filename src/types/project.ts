@@ -52,3 +52,9 @@ export interface ProjectCreateResponse {
     qualifier: string;
   };
 }
+
+export interface ProjectDeleteFilters {
+  projects?: string[];
+  analyzedBefore?: string;
+  json?: boolean;
+}

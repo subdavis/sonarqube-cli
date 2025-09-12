@@ -109,5 +109,8 @@
     }
   ],
   "canChangeStatus": true,
-  "codeVariants": ["windows", "linux"]
+  "codeVariants": [
+    "windows",
+    "linux"
+  ]
 }

@@ -1705,7 +1705,10 @@
               "description": "Whether the created application should be visible to everyone, or only specific user/groups.<br/>If no visibility is specified, the default visibility will be used.",
               "required": false,
               "internal": false,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         },
@@ -1879,7 +1882,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -2210,7 +2217,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "p",
@@ -2567,7 +2579,11 @@
               "since": "6.1",
               "required": false,
               "internal": false,
-              "possibleValues": ["stacktrace", "scannerContext", "warnings"]
+              "possibleValues": [
+                "stacktrace",
+                "scannerContext",
+                "warnings"
+              ]
             },
             {
               "key": "id",
@@ -2706,7 +2722,12 @@
               "description": "Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>APP - Applications</li><li>VW - Portfolios</li><li>SVW - Portfolios</li><li>TRK - Projects</li></ul>",
               "required": true,
               "internal": false,
-              "possibleValues": ["APP", "VW", "SVW", "TRK"]
+              "possibleValues": [
+                "APP",
+                "VW",
+                "SVW",
+                "TRK"
+              ]
             }
           ]
         },
@@ -2762,7 +2783,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "f",
@@ -2770,7 +2796,11 @@
               "since": "6.4",
               "required": false,
               "internal": false,
-              "possibleValues": ["analysisDate", "leakPeriodDate", "_all"]
+              "possibleValues": [
+                "analysisDate",
+                "leakPeriodDate",
+                "_all"
+              ]
             },
             {
               "key": "facets",
@@ -2941,7 +2971,12 @@
               "since": "6.4",
               "required": false,
               "internal": false,
-              "possibleValues": ["VW", "SVW", "APP", "TRK"]
+              "possibleValues": [
+                "VW",
+                "SVW",
+                "APP",
+                "TRK"
+              ]
             },
             {
               "key": "recentlyBrowsed",
@@ -2994,7 +3029,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "branch",
@@ -3049,7 +3089,15 @@
               "description": "Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>APP - Applications</li><li>VW - Portfolios</li><li>SVW - Portfolios</li><li>UTS - Test Files</li><li>FIL - Files</li><li>DIR - Directories</li><li>TRK - Projects</li></ul>",
               "required": false,
               "internal": false,
-              "possibleValues": ["APP", "VW", "SVW", "UTS", "FIL", "DIR", "TRK"]
+              "possibleValues": [
+                "APP",
+                "VW",
+                "SVW",
+                "UTS",
+                "FIL",
+                "DIR",
+                "TRK"
+              ]
             },
             {
               "key": "s",
@@ -3058,7 +3106,11 @@
               "internal": false,
               "defaultValue": "name",
               "exampleValue": "name, path",
-              "possibleValues": ["name", "path", "qualifier"]
+              "possibleValues": [
+                "name",
+                "path",
+                "qualifier"
+              ]
             },
             {
               "key": "strategy",
@@ -3066,7 +3118,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "all",
-              "possibleValues": ["all", "children", "leaves"]
+              "possibleValues": [
+                "all",
+                "children",
+                "leaves"
+              ]
             }
           ]
         }
@@ -3634,7 +3690,11 @@
               "description": "Frequency at which the report is sent.<br>If not set, the specific frequency for the component is deleted and the global frequency is used.",
               "required": false,
               "internal": false,
-              "possibleValues": ["daily", "weekly", "monthly"]
+              "possibleValues": [
+                "daily",
+                "weekly",
+                "monthly"
+              ]
             }
           ]
         },
@@ -3788,14 +3848,21 @@
               "description": "Resolution of the Security Hotspot when new status is REVIEWED, otherwise must not be set.",
               "required": false,
               "internal": false,
-              "possibleValues": ["FIXED", "SAFE", "ACKNOWLEDGED"]
+              "possibleValues": [
+                "FIXED",
+                "SAFE",
+                "ACKNOWLEDGED"
+              ]
             },
             {
               "key": "status",
               "description": "New status of the Security Hotspot.",
               "required": true,
               "internal": false,
-              "possibleValues": ["TO_REVIEW", "REVIEWED"]
+              "possibleValues": [
+                "TO_REVIEW",
+                "REVIEWED"
+              ]
             }
           ]
         },
@@ -3865,7 +3932,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "p",
@@ -3903,14 +3975,21 @@
               "description": "If 'project' is provided and if status is 'REVIEWED', only Security Hotspots with the specified resolution are returned.",
               "required": false,
               "internal": false,
-              "possibleValues": ["FIXED", "SAFE", "ACKNOWLEDGED"]
+              "possibleValues": [
+                "FIXED",
+                "SAFE",
+                "ACKNOWLEDGED"
+              ]
             },
             {
               "key": "status",
               "description": "If 'project' is provided, only Security Hotspots with the specified status are returned.",
               "required": false,
               "internal": false,
-              "possibleValues": ["TO_REVIEW", "REVIEWED"]
+              "possibleValues": [
+                "TO_REVIEW",
+                "REVIEWED"
+              ]
             }
           ]
         },
@@ -4044,14 +4123,24 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "onlyMine",
               "description": "If 'projectKey' is provided, returns only Security Hotspots assigned to the current user",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "owaspAsvs-4.0",
@@ -4068,7 +4157,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "2",
-              "possibleValues": ["1", "2", "3"]
+              "possibleValues": [
+                "1",
+                "2",
+                "3"
+              ]
             },
             {
               "key": "owaspTop10",
@@ -4161,7 +4254,11 @@
               "description": "If 'project' is provided and if status is 'REVIEWED', only Security Hotspots with the specified resolution are returned.",
               "required": false,
               "internal": false,
-              "possibleValues": ["FIXED", "SAFE", "ACKNOWLEDGED"]
+              "possibleValues": [
+                "FIXED",
+                "SAFE",
+                "ACKNOWLEDGED"
+              ]
             },
             {
               "key": "sansTop25",
@@ -4214,7 +4311,10 @@
               "description": "If 'project' is provided, only Security Hotspots with the specified status are returned.",
               "required": false,
               "internal": false,
-              "possibleValues": ["TO_REVIEW", "REVIEWED"]
+              "possibleValues": [
+                "TO_REVIEW",
+                "REVIEWED"
+              ]
             },
             {
               "key": "stig-ASD_V5R3",
@@ -4568,7 +4668,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "set_severity",
@@ -4994,7 +5099,12 @@
               "internal": false,
               "defaultValue": "false",
               "exampleValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "p",
@@ -5033,7 +5143,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "types",
@@ -5041,7 +5156,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "BUG, VULNERABILITY",
-              "possibleValues": ["BUG", "VULNERABILITY", "CODE_SMELL"]
+              "possibleValues": [
+                "BUG",
+                "VULNERABILITY",
+                "CODE_SMELL"
+              ]
             }
           ]
         },
@@ -5502,14 +5621,24 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "assigned",
               "description": "To retrieve assigned or unassigned issues",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "assignees",
@@ -5675,7 +5804,12 @@
               "description": "To match issues detected because of SonarQube updates",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "impactSeverities",
@@ -5684,7 +5818,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "impactSoftwareQualities",
@@ -5693,7 +5833,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAINTAINABILITY,RELIABILITY",
-              "possibleValues": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
+              "possibleValues": [
+                "MAINTAINABILITY",
+                "RELIABILITY",
+                "SECURITY"
+              ]
             },
             {
               "key": "inNewCodePeriod",
@@ -5701,7 +5845,12 @@
               "since": "9.4",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "issueStatuses",
@@ -5738,7 +5887,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "owaspAsvs-4.0",
@@ -5754,7 +5908,11 @@
               "since": "9.7",
               "required": false,
               "internal": false,
-              "possibleValues": ["1", "2", "3"]
+              "possibleValues": [
+                "1",
+                "2",
+                "3"
+              ]
             },
             {
               "key": "owaspMobileTop10-2024",
@@ -5842,7 +6000,12 @@
               "description": "To match issues with prioritized rule or not",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "projects",
@@ -5886,7 +6049,12 @@
               "description": "To match resolved or unresolved issues",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "rules",
@@ -5901,13 +6069,13 @@
               "required": false,
               "internal": false,
               "possibleValues": [
-                "CREATION_DATE",
-                "CLOSE_DATE",
-                "SEVERITY",
                 "STATUS",
                 "FILE_LINE",
                 "HOTSPOTS",
-                "UPDATE_DATE"
+                "UPDATE_DATE",
+                "CREATION_DATE",
+                "CLOSE_DATE",
+                "SEVERITY"
               ]
             },
             {
@@ -5929,7 +6097,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAIN,TEST",
-              "possibleValues": ["MAIN", "TEST"]
+              "possibleValues": [
+                "MAIN",
+                "TEST"
+              ]
             },
             {
               "key": "severities",
@@ -6022,7 +6193,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "CODE_SMELL,BUG",
-              "possibleValues": ["CODE_SMELL", "BUG", "VULNERABILITY"]
+              "possibleValues": [
+                "CODE_SMELL",
+                "BUG",
+                "VULNERABILITY"
+              ]
             }
           ]
         },
@@ -6235,7 +6410,11 @@
               "description": "New type",
               "required": true,
               "internal": false,
-              "possibleValues": ["CODE_SMELL", "BUG", "VULNERABILITY"]
+              "possibleValues": [
+                "CODE_SMELL",
+                "BUG",
+                "VULNERABILITY"
+              ]
             }
           ]
         },
@@ -6264,7 +6443,10 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false"]
+              "possibleValues": [
+                "true",
+                "false"
+              ]
             },
             {
               "key": "branch",
@@ -6501,7 +6683,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "period,metrics",
-              "possibleValues": ["metrics", "period"]
+              "possibleValues": [
+                "metrics",
+                "period"
+              ]
             },
             {
               "key": "branch",
@@ -6687,7 +6872,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "period,metrics",
-              "possibleValues": ["metrics", "period"]
+              "possibleValues": [
+                "metrics",
+                "period"
+              ]
             },
             {
               "key": "asc",
@@ -6695,7 +6883,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "branch",
@@ -6714,7 +6907,7 @@
             },
             {
               "key": "metricKeys",
-              "description": "Comma-separated list of metric keys. Types DISTRIB are not allowed. For type DATA only new_security_issues, new_reliability_issues, security_issues, maintainability_issues, reliability_issues, new_maintainability_issues metrics are supported",
+              "description": "Comma-separated list of metric keys. Types DISTRIB are not allowed. For type DATA only security_issues, maintainability_issues, reliability_issues, new_maintainability_issues, new_security_issues, new_reliability_issues metrics are supported",
               "required": true,
               "internal": false,
               "exampleValue": "ncloc,complexity,violations",
@@ -6726,7 +6919,9 @@
               "since": "5.5",
               "required": false,
               "internal": false,
-              "possibleValues": ["1"]
+              "possibleValues": [
+                "1"
+              ]
             },
             {
               "key": "metricSort",
@@ -6741,7 +6936,10 @@
               "required": false,
               "internal": false,
               "defaultValue": "all",
-              "possibleValues": ["all", "withMeasuresOnly"]
+              "possibleValues": [
+                "all",
+                "withMeasuresOnly"
+              ]
             },
             {
               "key": "p",
@@ -6781,7 +6979,15 @@
               "description": "Comma-separated list of component qualifiers. Filter the results with the specified qualifiers. Possible values are:<ul><li>APP - Applications</li><li>VW - Portfolios</li><li>SVW - Portfolios</li><li>UTS - Test Files</li><li>FIL - Files</li><li>DIR - Directories</li><li>TRK - Projects</li></ul>",
               "required": false,
               "internal": false,
-              "possibleValues": ["APP", "VW", "SVW", "UTS", "FIL", "DIR", "TRK"]
+              "possibleValues": [
+                "APP",
+                "VW",
+                "SVW",
+                "UTS",
+                "FIL",
+                "DIR",
+                "TRK"
+              ]
             },
             {
               "key": "s",
@@ -6804,7 +7010,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "all",
-              "possibleValues": ["children", "leaves", "all"]
+              "possibleValues": [
+                "leaves",
+                "all",
+                "children"
+              ]
             }
           ]
         },
@@ -7319,7 +7529,9 @@
               "required": false,
               "internal": false,
               "defaultValue": "EmailNotificationChannel",
-              "possibleValues": ["EmailNotificationChannel"]
+              "possibleValues": [
+                "EmailNotificationChannel"
+              ]
             },
             {
               "key": "login",
@@ -7377,7 +7589,9 @@
               "required": false,
               "internal": false,
               "defaultValue": "EmailNotificationChannel",
-              "possibleValues": ["EmailNotificationChannel"]
+              "possibleValues": [
+                "EmailNotificationChannel"
+              ]
             },
             {
               "key": "login",
@@ -7702,7 +7916,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "projects",
@@ -7726,7 +7945,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "TRK",
-              "possibleValues": ["APP", "TRK", "VW"]
+              "possibleValues": [
+                "APP",
+                "TRK",
+                "VW"
+              ]
             },
             {
               "key": "templateId",
@@ -7748,7 +7971,10 @@
               "since": "6.6",
               "required": false,
               "internal": true,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         },
@@ -8136,7 +8362,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "TRK",
-              "possibleValues": ["APP", "TRK", "VW"]
+              "possibleValues": [
+                "APP",
+                "TRK",
+                "VW"
+              ]
             },
             {
               "key": "templateId",
@@ -8503,7 +8733,9 @@
               "since": "5.6",
               "required": false,
               "internal": false,
-              "possibleValues": ["category"]
+              "possibleValues": [
+                "category"
+              ]
             },
             {
               "key": "type",
@@ -8511,7 +8743,10 @@
               "since": "8.5",
               "required": false,
               "internal": true,
-              "possibleValues": ["BUNDLED", "EXTERNAL"]
+              "possibleValues": [
+                "BUNDLED",
+                "EXTERNAL"
+              ]
             }
           ]
         },
@@ -8605,7 +8840,10 @@
               "required": false,
               "internal": false,
               "defaultValue": "OTHER",
-              "possibleValues": ["VERSION", "OTHER"]
+              "possibleValues": [
+                "VERSION",
+                "OTHER"
+              ]
             },
             {
               "key": "name",
@@ -8739,7 +8977,11 @@
               "internal": true,
               "defaultValue": "P",
               "exampleValue": "P,U,L",
-              "possibleValues": ["P", "U", "L"]
+              "possibleValues": [
+                "P",
+                "U",
+                "L"
+              ]
             },
             {
               "key": "to",
@@ -9094,7 +9336,12 @@
               "required": true,
               "internal": false,
               "exampleValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             }
           ]
         },
@@ -9456,7 +9703,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "projects",
@@ -9478,7 +9730,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "TRK",
-              "possibleValues": ["TRK", "VW", "APP"]
+              "possibleValues": [
+                "TRK",
+                "VW",
+                "APP"
+              ]
             },
             {
               "key": "visibility",
@@ -9486,7 +9742,10 @@
               "since": "6.4",
               "required": false,
               "internal": true,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         },
@@ -9551,7 +9810,10 @@
               "since": "6.4",
               "required": false,
               "internal": false,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         },
@@ -9725,7 +9987,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "p",
@@ -9766,7 +10033,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "TRK",
-              "possibleValues": ["TRK", "VW", "APP"]
+              "possibleValues": [
+                "TRK",
+                "VW",
+                "APP"
+              ]
             },
             {
               "key": "visibility",
@@ -9774,7 +10045,10 @@
               "since": "6.4",
               "required": false,
               "internal": true,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         },
@@ -9873,7 +10147,10 @@
               "description": "Default visibility for projects",
               "required": true,
               "internal": false,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         },
@@ -9928,7 +10205,10 @@
               "description": "New visibility",
               "required": true,
               "internal": false,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         }
@@ -10181,7 +10461,7 @@
             },
             {
               "key": "metric",
-              "description": "Condition metric.<br/> Only metric of the following types are allowed:<ul><li>INT</li><li>MILLISEC</li><li>RATING</li><li>WORK_DUR</li><li>FLOAT</li><li>PERCENT</li><li>LEVEL</li></ul>Following metrics are forbidden:<ul><li>security_hotspots</li><li>new_security_hotspots</li><li>alert_status</li></ul>",
+              "description": "Condition metric.<br/> Only metric of the following types are allowed:<ul><li>INT</li><li>MILLISEC</li><li>RATING</li><li>WORK_DUR</li><li>FLOAT</li><li>PERCENT</li><li>LEVEL</li></ul>Following metrics are forbidden:<ul><li>alert_status</li><li>security_hotspots</li><li>new_security_hotspots</li></ul>",
               "required": true,
               "internal": false,
               "exampleValue": "blocker_violations, vulnerabilities, new_code_smells"
@@ -10192,7 +10472,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "GT",
-              "possibleValues": ["LT", "GT"]
+              "possibleValues": [
+                "LT",
+                "GT"
+              ]
             }
           ]
         },
@@ -10643,7 +10926,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -10692,7 +10979,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -10741,7 +11032,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -10812,7 +11107,12 @@
               "description": "Sets if Quality Gate is AI Code Assured",
               "required": true,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "gateName",
@@ -10962,7 +11262,7 @@
             },
             {
               "key": "metric",
-              "description": "Condition metric.<br/> Only metric of the following types are allowed:<ul><li>INT</li><li>MILLISEC</li><li>RATING</li><li>WORK_DUR</li><li>FLOAT</li><li>PERCENT</li><li>LEVEL</li></ul>Following metrics are forbidden:<ul><li>security_hotspots</li><li>new_security_hotspots</li><li>alert_status</li></ul>",
+              "description": "Condition metric.<br/> Only metric of the following types are allowed:<ul><li>INT</li><li>MILLISEC</li><li>RATING</li><li>WORK_DUR</li><li>FLOAT</li><li>PERCENT</li><li>LEVEL</li></ul>Following metrics are forbidden:<ul><li>alert_status</li><li>security_hotspots</li><li>new_security_hotspots</li></ul>",
               "required": true,
               "internal": false,
               "exampleValue": "blocker_violations, vulnerabilities, new_code_smells"
@@ -10973,7 +11273,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "GT",
-              "possibleValues": ["LT", "GT"]
+              "possibleValues": [
+                "LT",
+                "GT"
+              ]
             }
           ]
         }
@@ -11037,14 +11340,24 @@
               "since": "10.6",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "reset",
               "description": "Reset severity and parameters of activated rule. Set the values defined on parent profile or from rule default values.",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "rule",
@@ -11099,7 +11412,12 @@
               "description": "Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set.",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "active_impactSeverities",
@@ -11108,7 +11426,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "active_severities",
@@ -11130,7 +11454,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "available_since",
@@ -11175,7 +11504,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "impactSoftwareQualities",
@@ -11184,7 +11519,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAINTAINABILITY,RELIABILITY",
-              "possibleValues": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
+              "possibleValues": [
+                "MAINTAINABILITY",
+                "RELIABILITY",
+                "SECURITY"
+              ]
             },
             {
               "key": "inheritance",
@@ -11192,14 +11531,23 @@
               "required": false,
               "internal": false,
               "exampleValue": "INHERITED,OVERRIDES",
-              "possibleValues": ["NONE", "INHERITED", "OVERRIDES"]
+              "possibleValues": [
+                "NONE",
+                "INHERITED",
+                "OVERRIDES"
+              ]
             },
             {
               "key": "is_template",
               "description": "Filter template rules",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "languages",
@@ -11271,7 +11619,12 @@
               "since": "10.6",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "q",
@@ -11308,7 +11661,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "name",
-              "possibleValues": ["name", "createdAt", "updatedAt", "key"]
+              "possibleValues": [
+                "name",
+                "createdAt",
+                "updatedAt",
+                "key"
+              ]
             },
             {
               "key": "sansTop25",
@@ -11377,7 +11735,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "READY",
-              "possibleValues": ["BETA", "DEPRECATED", "READY", "REMOVED"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY",
+                "REMOVED"
+              ]
             },
             {
               "key": "tags",
@@ -11865,7 +12228,10 @@
               "required": false,
               "internal": false,
               "exampleValue": "MQR",
-              "possibleValues": ["STANDARD", "MQR"]
+              "possibleValues": [
+                "STANDARD",
+                "MQR"
+              ]
             },
             {
               "key": "language",
@@ -12159,7 +12525,12 @@
               "description": "Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set.",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "active_impactSeverities",
@@ -12168,7 +12539,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "active_severities",
@@ -12190,7 +12567,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "available_since",
@@ -12235,7 +12617,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "impactSoftwareQualities",
@@ -12244,7 +12632,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAINTAINABILITY,RELIABILITY",
-              "possibleValues": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
+              "possibleValues": [
+                "MAINTAINABILITY",
+                "RELIABILITY",
+                "SECURITY"
+              ]
             },
             {
               "key": "inheritance",
@@ -12252,14 +12644,23 @@
               "required": false,
               "internal": false,
               "exampleValue": "INHERITED,OVERRIDES",
-              "possibleValues": ["NONE", "INHERITED", "OVERRIDES"]
+              "possibleValues": [
+                "NONE",
+                "INHERITED",
+                "OVERRIDES"
+              ]
             },
             {
               "key": "is_template",
               "description": "Filter template rules",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "languages",
@@ -12360,7 +12761,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "name",
-              "possibleValues": ["name", "createdAt", "updatedAt", "key"]
+              "possibleValues": [
+                "name",
+                "createdAt",
+                "updatedAt",
+                "key"
+              ]
             },
             {
               "key": "sansTop25",
@@ -12429,7 +12835,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "READY",
-              "possibleValues": ["BETA", "DEPRECATED", "READY", "REMOVED"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY",
+                "REMOVED"
+              ]
             },
             {
               "key": "tags",
@@ -12785,7 +13196,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -13104,7 +13519,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "language",
@@ -13271,7 +13691,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -13372,7 +13796,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -13461,7 +13889,12 @@
               "required": false,
               "internal": true,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "key",
@@ -13629,7 +14062,12 @@
               "internal": false,
               "defaultValue": "false",
               "deprecatedSince": "10.4",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "severity",
@@ -13650,7 +14088,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "READY",
-              "possibleValues": ["BETA", "DEPRECATED", "READY"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY"
+              ]
             },
             {
               "key": "templateKey",
@@ -13736,7 +14178,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "available_since",
@@ -13778,7 +14225,9 @@
               "since": "10.4",
               "required": false,
               "internal": false,
-              "possibleValues": ["createdAt"]
+              "possibleValues": [
+                "createdAt"
+              ]
             }
           ]
         },
@@ -14014,7 +14463,12 @@
               "description": "Filter rules that are activated or deactivated on the selected Quality profile. Ignored if the parameter 'qprofile' is not set.",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "active_impactSeverities",
@@ -14023,7 +14477,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "active_severities",
@@ -14045,7 +14505,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "available_since",
@@ -14088,7 +14553,7 @@
               "description": "Comma-separated list of additional fields to be returned in the response. All the fields are returned by default, except actives.",
               "required": false,
               "internal": false,
-              "exampleValue": "tags,langName",
+              "exampleValue": "remFnOverloaded,severity",
               "possibleValues": [
                 "actives",
                 "cleanCodeAttribute",
@@ -14158,7 +14623,13 @@
               "required": false,
               "internal": false,
               "exampleValue": "HIGH,MEDIUM",
-              "possibleValues": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
+              "possibleValues": [
+                "INFO",
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "BLOCKER"
+              ]
             },
             {
               "key": "impactSoftwareQualities",
@@ -14167,7 +14638,11 @@
               "required": false,
               "internal": false,
               "exampleValue": "MAINTAINABILITY,RELIABILITY",
-              "possibleValues": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
+              "possibleValues": [
+                "MAINTAINABILITY",
+                "RELIABILITY",
+                "SECURITY"
+              ]
             },
             {
               "key": "include_external",
@@ -14176,7 +14651,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "inheritance",
@@ -14184,14 +14664,23 @@
               "required": false,
               "internal": false,
               "exampleValue": "INHERITED,OVERRIDES",
-              "possibleValues": ["NONE", "INHERITED", "OVERRIDES"]
+              "possibleValues": [
+                "NONE",
+                "INHERITED",
+                "OVERRIDES"
+              ]
             },
             {
               "key": "is_template",
               "description": "Filter template rules",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "languages",
@@ -14271,7 +14760,12 @@
               "since": "10.6",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "ps",
@@ -14317,7 +14811,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "name",
-              "possibleValues": ["name", "createdAt", "updatedAt", "key"]
+              "possibleValues": [
+                "name",
+                "createdAt",
+                "updatedAt",
+                "key"
+              ]
             },
             {
               "key": "sansTop25",
@@ -14386,7 +14885,12 @@
               "required": false,
               "internal": false,
               "exampleValue": "READY",
-              "possibleValues": ["BETA", "DEPRECATED", "READY", "REMOVED"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY",
+                "REMOVED"
+              ]
             },
             {
               "key": "tags",
@@ -14530,7 +15034,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "key",
@@ -14670,7 +15179,11 @@
               "since": "5.5",
               "required": false,
               "internal": false,
-              "possibleValues": ["LINEAR", "LINEAR_OFFSET", "CONSTANT_ISSUE"]
+              "possibleValues": [
+                "LINEAR",
+                "LINEAR_OFFSET",
+                "CONSTANT_ISSUE"
+              ]
             },
             {
               "key": "remediation_fy_gap_multiplier",
@@ -14698,7 +15211,12 @@
               "description": "Rule status (Only when updating a custom rule)",
               "required": false,
               "internal": false,
-              "possibleValues": ["BETA", "DEPRECATED", "READY", "REMOVED"]
+              "possibleValues": [
+                "BETA",
+                "DEPRECATED",
+                "READY",
+                "REMOVED"
+              ]
             },
             {
               "key": "tags",
@@ -14841,7 +15359,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "project",
@@ -15295,7 +15818,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "from",
@@ -15389,7 +15917,11 @@
               "description": "The new level. Be cautious: DEBUG, and even more TRACE, may have performance impacts.",
               "required": true,
               "internal": false,
-              "possibleValues": ["TRACE", "DEBUG", "INFO"]
+              "possibleValues": [
+                "TRACE",
+                "DEBUG",
+                "INFO"
+              ]
             }
           ]
         },
@@ -15770,7 +16302,12 @@
               "since": "10.0",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "p",
@@ -15926,7 +16463,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         }
@@ -16154,7 +16695,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "true",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "login",
@@ -16241,7 +16787,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "login",
@@ -16377,7 +16928,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -16464,7 +17019,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "externalIdentity",
@@ -16495,7 +17055,12 @@
               "since": "10.0",
               "required": false,
               "internal": false,
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "p",
@@ -16970,7 +17535,10 @@
               "since": "2.0",
               "required": false,
               "internal": false,
-              "possibleValues": ["private", "public"]
+              "possibleValues": [
+                "private",
+                "public"
+              ]
             }
           ]
         },
@@ -17157,7 +17725,11 @@
               "required": false,
               "internal": false,
               "defaultValue": "selected",
-              "possibleValues": ["all", "deselected", "selected"]
+              "possibleValues": [
+                "all",
+                "deselected",
+                "selected"
+              ]
             }
           ]
         },
@@ -17198,7 +17770,10 @@
               "description": "Quality gate status to filter projects by.",
               "required": false,
               "internal": false,
-              "possibleValues": ["OK", "ERROR"]
+              "possibleValues": [
+                "OK",
+                "ERROR"
+              ]
             }
           ]
         },
@@ -17390,7 +17965,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             },
             {
               "key": "p",
@@ -17422,7 +18002,10 @@
               "since": "7.2",
               "required": false,
               "internal": false,
-              "possibleValues": ["VW", "SVW"]
+              "possibleValues": [
+                "VW",
+                "SVW"
+              ]
             }
           ]
         },
@@ -17888,7 +18471,12 @@
               "required": false,
               "internal": false,
               "defaultValue": "false",
-              "possibleValues": ["true", "false", "yes", "no"]
+              "possibleValues": [
+                "true",
+                "false",
+                "yes",
+                "no"
+              ]
             }
           ]
         },
