@@ -17,9 +17,7 @@
       "internalKey": "S1067",
       "isTemplate": false,
       "tags": [],
-      "sysTags": [
-        "brain-overload"
-      ],
+      "sysTags": ["brain-overload"],
       "lang": "java",
       "langName": "Java",
       "scope": "MAIN",
@@ -75,9 +73,7 @@
       "internalKey": "ClassCyclomaticComplexity",
       "isTemplate": false,
       "tags": [],
-      "sysTags": [
-        "brain-overload"
-      ],
+      "sysTags": ["brain-overload"],
       "lang": "java",
       "langName": "Java",
       "scope": "MAIN",
@@ -111,9 +107,7 @@
       "internalKey": "MethodCyclomaticComplexity",
       "isTemplate": false,
       "tags": [],
-      "sysTags": [
-        "brain-overload"
-      ],
+      "sysTags": ["brain-overload"],
       "lang": "java",
       "langName": "Java",
       "scope": "MAIN",

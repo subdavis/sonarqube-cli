@@ -1,7 +1,6 @@
 import { Command } from 'commander';
 import { getSonarProjectConfig } from '../context';
 import chalk from 'chalk';
-import { indent } from '../formatters/common';
 
 export function createConfigCommand(): Command {
   const configCmd = new Command('config');

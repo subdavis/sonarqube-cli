@@ -14,9 +14,7 @@
   "paths": {
     "/users-management/users": {
       "get": {
-        "tags": [
-          "default-user-controller"
-        ],
+        "tags": ["default-user-controller"],
         "summary": "Users search",
         "description": "  Get a list of users. By default, only active users are returned.\n  The following fields are only returned when user has Administer System permission or for logged-in in user :\n    'email',\n    'externalIdentity',\n    'externalProvider',\n    'groups',\n    'lastConnectionDate',\n    'sonarLintLastConnectionDate',\n    'tokensCount'.\n  Field 'sonarqubeLastConnectionDate' is only updated every hour, so it may not be accurate, for instance when a user authenticates many times in less than one hour.\n  The results are sorted alphabetically by login.\n",
         "operationId": "search",
@@ -162,9 +160,7 @@
         }
       },
       "post": {
-        "tags": [
-          "default-user-controller"
-        ],
+        "tags": ["default-user-controller"],
         "summary": "User creation",
         "description": "  Create a user.\n  If a deactivated user account exists with the given login, it will be reactivated.\n  Requires Administer System permission.\n",
         "operationId": "create",
@@ -194,9 +190,7 @@
     },
     "/system/email-configurations": {
       "get": {
-        "tags": [
-          "default-email-configuration-controller"
-        ],
+        "tags": ["default-email-configuration-controller"],
         "summary": "Search email configurations",
         "description": "  Get the list of email configurations.\n  Note that a single configuration is supported at this time.\n  Requires 'Administer System' permission.\n",
         "operationId": "searchEmailConfigurations",
@@ -215,9 +209,7 @@
         "x-sonar-internal": "true"
       },
       "post": {
-        "tags": [
-          "default-email-configuration-controller"
-        ],
+        "tags": ["default-email-configuration-controller"],
         "summary": "Create an email configuration",
         "description": "  Create a new email configuration.\n  Note that only a single configuration can exist at a time.\n  Requires 'Administer System' permission.\n",
         "operationId": "createEmailConfiguration",
@@ -248,9 +240,7 @@
     },
     "/sca/license-profiles": {
       "get": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "List license profiles",
         "description": "  List the license profiles that have been configured for use when evaluating license issues.\n",
         "operationId": "index",
@@ -281,9 +271,7 @@
         "x-sonar-internal": "true"
       },
       "post": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Create new license profile",
         "description": "  Create a new license profile for projects to use when evaluating license issues.\n",
         "operationId": "create_1",
@@ -315,9 +303,7 @@
     },
     "/sca/issues-releases/update-assignee": {
       "post": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Update the assignee of an (issue,release) pair",
         "description": "Update the assignee of an (issue,release) pair (dependency risk).\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "updateAssignee",
@@ -348,9 +334,7 @@
     },
     "/sca/issues-releases/set-severity": {
       "post": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Manually change the severity of an issue-release pair",
         "description": "Change the severity of a (issue,release) pair (dependency risk).\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "setSeverity",
@@ -381,9 +365,7 @@
     },
     "/sca/issues-releases/clear-severity-warning": {
       "post": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Dismiss the increased severity warning for an issue-release pair after reviewing the warning",
         "description": "Dismiss the increased severity warning for an (issue,release) pair (dependency risk) after reviewing the warning.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "clearSeverityWarning",
@@ -414,9 +396,7 @@
     },
     "/sca/issues-releases/change-status": {
       "post": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Transition an issue-release pair to a new status",
         "description": "Transition a single (issue,release) pair (dependency risk) to a new status with a comment about why the status is changing.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "transitionIssueRelease",
@@ -447,9 +427,7 @@
     },
     "/sca/issues-releases/add-comment": {
       "post": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Add a comment to an issue-release pair",
         "description": "Add a comment to a (issue,release) pair (dependency risk).\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "addComment",
@@ -473,9 +451,7 @@
     },
     "/fix-suggestions/feature-enablements/awareness-banner-interactions": {
       "post": {
-        "tags": [
-          "feature-enablement-controller"
-        ],
+        "tags": ["feature-enablement-controller"],
         "summary": "Starts a GitLab synchronization run.",
         "operationId": "createAwarenessBannerClicked",
         "requestBody": {
@@ -505,9 +481,7 @@
     },
     "/fix-suggestions/ai-suggestions": {
       "post": {
-        "tags": [
-          "fix-suggestion-controller"
-        ],
+        "tags": ["fix-suggestion-controller"],
         "summary": "Suggest a fix for the given issueId",
         "description": "Requires Code Viewer permission.",
         "operationId": "create_2",
@@ -537,9 +511,7 @@
     },
     "/entitlements/online-activation": {
       "post": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Sets the license",
         "description": "  Only third party license keys are accepted.\n  Requires 'Administer System' permission.\n",
         "operationId": "setLicense",
@@ -563,9 +535,7 @@
     },
     "/entitlements/offline-deactivation": {
       "post": {
-        "tags": [
-          "$"
-        ],
+        "tags": ["$"],
         "summary": "Deactivates offline license",
         "description": "  This method is for users who activated the license using offline method. It should be used to\n  fully deactivate the license (i.e. in cases of migrating the installation to a new server).\n",
         "operationId": "deactivateLicense",
@@ -587,9 +557,7 @@
     },
     "/entitlements/offline-activation": {
       "get": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Retrieve a valid .req file for offline activation",
         "description": "  Retrieves a .req file for offline activation of a license.\n  Requires 'Administer System' permission.\n",
         "operationId": "retrieveRequestFile",
@@ -620,9 +588,7 @@
         "x-sonar-internal": "true"
       },
       "post": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Uploads a license",
         "description": "  The content of the request body should be the text of the license file, along with a valid license key.\n  Requires 'Administer System' permission.\n",
         "operationId": "uploadLicense",
@@ -646,9 +612,7 @@
     },
     "/entitlements/legacy-activation": {
       "post": {
-        "tags": [
-          "t"
-        ],
+        "tags": ["t"],
         "summary": "Sets the license",
         "description": "  Only license keys received from Sonar are accepted.\n  Requires 'Administer System' permission.\n",
         "operationId": "setLegacyLicense",
@@ -672,9 +636,7 @@
     },
     "/dop-translation/gitlab-synchronization-runs": {
       "post": {
-        "tags": [
-          "gitlab-synchronization-run-controller"
-        ],
+        "tags": ["gitlab-synchronization-run-controller"],
         "summary": "Starts a GitLab synchronization run.",
         "description": "  Adds a new GitLab synchronization run in the background tasks. Requires sys-admins permissions.\n",
         "operationId": "create_3",
@@ -695,9 +657,7 @@
     },
     "/dop-translation/gitlab-permission-mappings": {
       "get": {
-        "tags": [
-          "gitlab-permission-mappings-controller"
-        ],
+        "tags": ["gitlab-permission-mappings-controller"],
         "summary": "Fetch permissions mapping",
         "description": "Get the list of all the existing roles with their permission mappings. Requires 'Administer System' permission.",
         "operationId": "fetchAll",
@@ -716,9 +676,7 @@
         "x-sonar-internal": "true"
       },
       "post": {
-        "tags": [
-          "gitlab-permission-mappings-controller"
-        ],
+        "tags": ["gitlab-permission-mappings-controller"],
         "summary": "Create a permission mapping for a custom role",
         "description": "Requires 'Administer System' permission.",
         "operationId": "createMapping",
@@ -749,9 +707,7 @@
     },
     "/dop-translation/gitlab-configurations": {
       "get": {
-        "tags": [
-          "default-gitlab-configuration-controller"
-        ],
+        "tags": ["default-gitlab-configuration-controller"],
         "summary": "Search GitLab configs",
         "description": "  Get the list of GitLab configurations.\n  Note that a single configuration is supported at this time.\n  Requires 'Administer System' permission.\n",
         "operationId": "searchGitlabConfiguration",
@@ -770,9 +726,7 @@
         "x-sonar-internal": "true"
       },
       "post": {
-        "tags": [
-          "default-gitlab-configuration-controller"
-        ],
+        "tags": ["default-gitlab-configuration-controller"],
         "summary": "Create Gitlab configuration",
         "description": "  Create a new Gitlab configuration.\n  Note that only a single configuration can exist at a time.\n  Requires 'Administer System' permission.\n",
         "operationId": "create_4",
@@ -803,9 +757,7 @@
     },
     "/dop-translation/github-permission-mappings": {
       "get": {
-        "tags": [
-          "github-permission-mappings-controller"
-        ],
+        "tags": ["github-permission-mappings-controller"],
         "summary": "Fetch permissions mapping",
         "description": "Get the list of all the existing roles with their permission mappings. Requires 'Administer System' permission.",
         "operationId": "fetchAll_1",
@@ -824,9 +776,7 @@
         "x-sonar-internal": "true"
       },
       "post": {
-        "tags": [
-          "github-permission-mappings-controller"
-        ],
+        "tags": ["github-permission-mappings-controller"],
         "summary": "Create a permission mapping for a custom role",
         "description": "Requires 'Administer System' permission.",
         "operationId": "createMapping_1",
@@ -857,9 +807,7 @@
     },
     "/dop-translation/github-configurations": {
       "get": {
-        "tags": [
-          "default-github-configuration-controller"
-        ],
+        "tags": ["default-github-configuration-controller"],
         "summary": "Search GitHub configs",
         "description": "  Get the list of GitHub configurations.\n  Note that a single configuration is supported at this time.\n  Requires 'Administer System' permission.\n",
         "operationId": "searchGithubConfiguration",
@@ -878,9 +826,7 @@
         "x-sonar-internal": "true"
       },
       "post": {
-        "tags": [
-          "default-github-configuration-controller"
-        ],
+        "tags": ["default-github-configuration-controller"],
         "summary": "Create GitHub configuration",
         "description": "  Create a new GitHub configuration.\n  Note that only a single configuration can exist at a time.\n  Requires 'Administer System' permission.\n",
         "operationId": "createGithubConfiguration",
@@ -911,9 +857,7 @@
     },
     "/dop-translation/bound-projects": {
       "post": {
-        "tags": [
-          "default-bound-projects-controller"
-        ],
+        "tags": ["default-bound-projects-controller"],
         "summary": "Create a SonarQube project with the information from the provided DevOps platform project.",
         "description": "Create a SonarQube project with the information from the provided DevOps platform project.\nAutoconfigure Pull-Request decoration mechanism.\nRequires the 'Create Projects' permission and setting a Personal Access Token with api/alm_integrations/set_pat for a user who will be using this endpoint\n",
         "operationId": "createBoundProject",
@@ -943,9 +887,7 @@
     },
     "/clean-code-policy/rules": {
       "post": {
-        "tags": [
-          "default-rule-controller"
-        ],
+        "tags": ["default-rule-controller"],
         "summary": "Custom rule creation",
         "description": "  Create a custom rule.\n  Requires the 'Administer Quality Profiles' permission.\n",
         "operationId": "create_5",
@@ -975,9 +917,7 @@
     },
     "/authorizations/groups": {
       "get": {
-        "tags": [
-          "default-group-controller"
-        ],
+        "tags": ["default-group-controller"],
         "summary": "Group search",
         "description": "  Get the list of groups.\n  The results are sorted alphabetically by group name.\n",
         "operationId": "search_1",
@@ -1054,9 +994,7 @@
         }
       },
       "post": {
-        "tags": [
-          "default-group-controller"
-        ],
+        "tags": ["default-group-controller"],
         "summary": "Create a new group",
         "description": "Create a new group.",
         "operationId": "create_6",
@@ -1086,9 +1024,7 @@
     },
     "/authorizations/group-memberships": {
       "get": {
-        "tags": [
-          "default-group-membership-controller"
-        ],
+        "tags": ["default-group-membership-controller"],
         "summary": "Search across group memberships",
         "description": "  Get the list of groups and members matching the query.\n",
         "operationId": "search_2",
@@ -1155,9 +1091,7 @@
         }
       },
       "post": {
-        "tags": [
-          "default-group-membership-controller"
-        ],
+        "tags": ["default-group-membership-controller"],
         "summary": "Add a group membership",
         "description": "Add a user to a group.",
         "operationId": "create_7",
@@ -1187,9 +1121,7 @@
     },
     "/users-management/users/{id}": {
       "get": {
-        "tags": [
-          "default-user-controller"
-        ],
+        "tags": ["default-user-controller"],
         "summary": "Fetch a single user",
         "description": "Fetch a single user.\nThe following fields are only returned when user has Administer System permission or for logged-in in user :\n    'email'\n    'externalIdentity'\n    'externalProvider'\n    'groups'\n    'lastConnectionDate'\n    'sonarLintLastConnectionDate'\n    'tokensCount'\n  Field 'sonarqubeLastConnectionDate' is only updated every hour, so it may not be accurate, for instance when a user authenticates many times in less than one hour.\n",
         "operationId": "fetchUser",
@@ -1218,9 +1150,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "default-user-controller"
-        ],
+        "tags": ["default-user-controller"],
         "summary": "Deactivate a user",
         "description": "Deactivates a user. Requires Administer System permission.",
         "operationId": "deactivate",
@@ -1252,9 +1182,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "default-user-controller"
-        ],
+        "tags": ["default-user-controller"],
         "summary": "Update a user",
         "description": "Update users attributes.\n",
         "operationId": "updateUser",
@@ -1294,9 +1222,7 @@
     },
     "/system/email-configurations/{id}": {
       "get": {
-        "tags": [
-          "default-email-configuration-controller"
-        ],
+        "tags": ["default-email-configuration-controller"],
         "summary": "Fetch an email configuration",
         "description": "Fetch a Email configuration. Requires 'Administer System' permission.\n",
         "operationId": "getEmailConfiguration",
@@ -1326,9 +1252,7 @@
         "x-sonar-internal": "true"
       },
       "delete": {
-        "tags": [
-          "default-email-configuration-controller"
-        ],
+        "tags": ["default-email-configuration-controller"],
         "summary": "Delete an email configuration",
         "description": "Delete an email configuration.\nRequires 'Administer System' permission.\n",
         "operationId": "deleteEmailConfiguration",
@@ -1351,9 +1275,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "default-email-configuration-controller"
-        ],
+        "tags": ["default-email-configuration-controller"],
         "summary": "Update an email configuration",
         "description": "Update an email configuration. Requires 'Administer System' permission.\n",
         "operationId": "updateEmailConfiguration",
@@ -1394,9 +1316,7 @@
     },
     "/sca/license-profiles/{license-profile-key}": {
       "get": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Get the license policy for a given profile",
         "description": "Get the license policy for a given profile.\n",
         "operationId": "get",
@@ -1426,9 +1346,7 @@
         "x-sonar-internal": "true"
       },
       "delete": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Delete the license profile",
         "description": "Delete the license profile.",
         "operationId": "delete",
@@ -1451,9 +1369,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Update the license profile",
         "description": "  Update the license profile for projects to use when evaluating license issues.\n",
         "operationId": "update",
@@ -1495,9 +1411,7 @@
     },
     "/sca/license-profiles/{license-profile-key}/licenses/{license-policy-id}": {
       "patch": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Update the policy for a single license",
         "description": "  Update the policy for a single license in the license profile.\n",
         "operationId": "patchLicense",
@@ -1548,9 +1462,7 @@
     },
     "/sca/license-profiles/{license-profile-key}/categories/{category-key}": {
       "patch": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Update the policy for a license category",
         "description": "  Update the policy for an entire category in the license profile.\n",
         "operationId": "patchCategory",
@@ -1610,9 +1522,7 @@
     },
     "/sca/license-profiles/assigned-projects": {
       "patch": {
-        "tags": [
-          "$"
-        ],
+        "tags": ["$"],
         "summary": "Assign project to license profile",
         "description": "  Configure which license profile should be used when analyzing a project for license issues.\n",
         "operationId": "update_1",
@@ -1653,9 +1563,7 @@
     },
     "/sca/issues-releases/{key}/changelog": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get the changelog for a single issue-release pair",
         "description": "Get the changelog for a single (issue,release) pair (dependency risk), using the key from the search endpoint.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "getChangelog",
@@ -1685,9 +1593,7 @@
         "x-sonar-internal": "true"
       },
       "delete": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Delete a comment from an issue-release pair",
         "description": "Delete a comment from a (issue,release) pair (dependency risk).\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "deleteComment",
@@ -1720,9 +1626,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Update a comment on an issue-release pair",
         "description": "Update a comment on a (issue,release) pair (dependency risk).\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "updateComment",
@@ -1757,9 +1661,7 @@
     },
     "/sca/feature-enablements": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get the status of SCA enablement",
         "operationId": "getFeatureEnablement",
         "responses": {
@@ -1777,9 +1679,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Update SCA enablement settings",
         "operationId": "updateFeatureEnablement",
         "requestBody": {
@@ -1809,9 +1709,7 @@
     },
     "/fix-suggestions/feature-enablements": {
       "get": {
-        "tags": [
-          "feature-enablement-controller"
-        ],
+        "tags": ["feature-enablement-controller"],
         "summary": "Fetch the Ai CodeFix feature enablement configurations",
         "operationId": "getFeatureEnablement_1",
         "responses": {
@@ -1829,9 +1727,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "feature-enablement-controller"
-        ],
+        "tags": ["feature-enablement-controller"],
         "summary": "Enable/Disable the AI CodeFix feature at the instance or project level",
         "operationId": "updateFeatureEnablement_1",
         "requestBody": {
@@ -1854,9 +1750,7 @@
     },
     "/entitlements/license": {
       "get": {
-        "tags": [
-          "m"
-        ],
+        "tags": ["m"],
         "summary": "Returns information about the license",
         "description": "  Returns information about the current license.\n  Requires 'Administer System' permission.\n",
         "operationId": "getLicense",
@@ -1875,9 +1769,7 @@
         "x-sonar-internal": "true"
       },
       "delete": {
-        "tags": [
-          "m"
-        ],
+        "tags": ["m"],
         "summary": "Deletes the existing license",
         "description": "  Deletes the license. Both license keys received from Sonar and from 3rd party system can be removed.\n  Requires 'Administer System' permission.\n",
         "operationId": "deleteLicense",
@@ -1889,9 +1781,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "m"
-        ],
+        "tags": ["m"],
         "summary": "Refreshes the existing license",
         "description": "  Fetches the latest information about the license and updates it on the SonarQube Server instance.\n  Requires 'Administer System' permission.\n",
         "operationId": "refreshLicense",
@@ -1905,9 +1795,7 @@
     },
     "/dop-translation/gitlab-permission-mappings/{role}": {
       "delete": {
-        "tags": [
-          "gitlab-permission-mappings-controller"
-        ],
+        "tags": ["gitlab-permission-mappings-controller"],
         "summary": "Delete a single permission mappings",
         "description": "Requires 'Administer System' permission.",
         "operationId": "deleteMapping",
@@ -1930,9 +1818,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "gitlab-permission-mappings-controller"
-        ],
+        "tags": ["gitlab-permission-mappings-controller"],
         "summary": "Update a single permission mapping",
         "description": "Requires 'Administer System' permission.",
         "operationId": "updateMapping",
@@ -1974,9 +1860,7 @@
     },
     "/dop-translation/gitlab-configurations/{id}": {
       "get": {
-        "tags": [
-          "default-gitlab-configuration-controller"
-        ],
+        "tags": ["default-gitlab-configuration-controller"],
         "summary": "Fetch a GitLab configuration",
         "description": "Fetch a GitLab configuration. Requires 'Administer System' permission.\n",
         "operationId": "getGitlabConfiguration",
@@ -2006,9 +1890,7 @@
         "x-sonar-internal": "true"
       },
       "delete": {
-        "tags": [
-          "default-gitlab-configuration-controller"
-        ],
+        "tags": ["default-gitlab-configuration-controller"],
         "summary": "Delete a GitLab configuration",
         "description": "Delete a GitLab configuration.\nRequires 'Administer System' permission.\n",
         "operationId": "deleteGitlabConfiguration",
@@ -2031,9 +1913,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "default-gitlab-configuration-controller"
-        ],
+        "tags": ["default-gitlab-configuration-controller"],
         "summary": "Update a Gitlab configuration",
         "description": "Update a Gitlab configuration. Requires 'Administer System' permission.\n",
         "operationId": "updateGitlabConfiguration",
@@ -2074,9 +1954,7 @@
     },
     "/dop-translation/github-permission-mappings/{role}": {
       "delete": {
-        "tags": [
-          "github-permission-mappings-controller"
-        ],
+        "tags": ["github-permission-mappings-controller"],
         "summary": "Delete a single permission mappings",
         "description": "Requires 'Administer System' permission.",
         "operationId": "deleteMapping_1",
@@ -2099,9 +1977,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "github-permission-mappings-controller"
-        ],
+        "tags": ["github-permission-mappings-controller"],
         "summary": "Update a single permission mapping",
         "description": "Requires 'Administer System' permission.",
         "operationId": "updateMapping_1",
@@ -2143,9 +2019,7 @@
     },
     "/dop-translation/github-configurations/{id}": {
       "get": {
-        "tags": [
-          "default-github-configuration-controller"
-        ],
+        "tags": ["default-github-configuration-controller"],
         "summary": "Fetch a GitHub configuration",
         "description": "Fetch a GitHub configuration. Requires 'Administer System' permission.\n",
         "operationId": "getGithubConfiguration",
@@ -2175,9 +2049,7 @@
         "x-sonar-internal": "true"
       },
       "delete": {
-        "tags": [
-          "default-github-configuration-controller"
-        ],
+        "tags": ["default-github-configuration-controller"],
         "summary": "Delete a GitHub configuration",
         "description": "Delete a GitHub configuration.\nRequires 'Administer System' permission.\n",
         "operationId": "deleteGithubConfiguration",
@@ -2200,9 +2072,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "default-github-configuration-controller"
-        ],
+        "tags": ["default-github-configuration-controller"],
         "summary": "Update a GitHub configuration",
         "description": "Update a GitHub configuration. Requires 'Administer System' permission.\n",
         "operationId": "updateGithubConfiguration",
@@ -2243,9 +2113,7 @@
     },
     "/clean-code-policy/mode": {
       "get": {
-        "tags": [
-          "default-mode-controller"
-        ],
+        "tags": ["default-mode-controller"],
         "summary": "Retrieve current instance Mode",
         "description": "Fetch the current instance mode. Can be Multi-Quality Rules (MQR) Mode or Standard Experience.\n",
         "operationId": "getMode",
@@ -2264,9 +2132,7 @@
         "x-sonar-internal": "true"
       },
       "patch": {
-        "tags": [
-          "default-mode-controller"
-        ],
+        "tags": ["default-mode-controller"],
         "summary": "Update current instance Mode",
         "description": "Update the current instance mode. Can be Multi-Quality Rules (MQR) Mode or Standard Experience.\nRequires 'Administer System' permission.\n",
         "operationId": "patchMode",
@@ -2297,9 +2163,7 @@
     },
     "/authorizations/groups/{id}": {
       "get": {
-        "tags": [
-          "default-group-controller"
-        ],
+        "tags": ["default-group-controller"],
         "summary": "Fetch a single group",
         "description": "Fetch a single group.",
         "operationId": "fetchGroup",
@@ -2328,9 +2192,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "default-group-controller"
-        ],
+        "tags": ["default-group-controller"],
         "summary": "Deletes a group",
         "description": "Deletes a group.",
         "operationId": "deleteGroup",
@@ -2352,9 +2214,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "default-group-controller"
-        ],
+        "tags": ["default-group-controller"],
         "summary": "Update a group",
         "description": "Update a group name or description.\n",
         "operationId": "updateGroup",
@@ -2394,9 +2254,7 @@
     },
     "/system/migrations-status": {
       "get": {
-        "tags": [
-          "database-migrations-controller"
-        ],
+        "tags": ["database-migrations-controller"],
         "summary": "Gets the status of ongoing database migrations, if any",
         "description": "Return the detailed status of ongoing database migrations including starting date. If no migration is ongoing or needed it is still possible to call this endpoint and receive appropriate information.",
         "operationId": "getStatus",
@@ -2416,9 +2274,7 @@
     },
     "/system/liveness": {
       "get": {
-        "tags": [
-          "default-liveness-controller"
-        ],
+        "tags": ["default-liveness-controller"],
         "summary": "Provide liveness of SonarQube, meant to be used as a liveness probe on Kubernetes",
         "description": "  Require 'Administer System' permission or authentication with passcode.\n\n  When SonarQube is fully started, liveness check for database connectivity, Compute Engine status, and, except for DataCenter Edition, if ElasticSearch is Green or Yellow.\n\n  When SonarQube is on Safe Mode (for example when a database migration is running), liveness check only for database connectivity\n",
         "operationId": "livenessCheck",
@@ -2445,9 +2301,7 @@
     },
     "/system/health": {
       "get": {
-        "tags": [
-          "health-controller"
-        ],
+        "tags": ["health-controller"],
         "operationId": "getHealth",
         "parameters": [
           {
@@ -2475,9 +2329,7 @@
     },
     "/sca/self-test": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Run a self test",
         "description": "Run a self test that the dependency analysis (SCA) feature is enabled and\nable to reach the cloud services it relies on.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "performSelfTest",
@@ -2498,9 +2350,7 @@
     },
     "/sca/self-test/spring-configuration": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Run a self test that Spring is configured as expected",
         "description": "Run a self test that Spring is set up and working as we expect.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "performSpringConfigurationSelfTest",
@@ -2532,9 +2382,7 @@
     },
     "/sca/sbom-reports": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get a software bill of materials (SBOM) report",
         "description": "Return a report based on the dependencies in this component's branch, using\nthe type parameter and Accept header to select the report to generate.\n\nRight now, the available reports have specialized MIME types that\ngo along with those formats:\n\n* CycloneDX: https://cyclonedx.org/specification/overview/\n  * JSON & XML\n* SPDX 2.3: https://spdx.github.io/spdx-spec/v2.3/\n  * JSON & XML\n",
         "operationId": "generateReport",
@@ -2567,10 +2415,7 @@
             "schema": {
               "type": "string",
               "description": "Type of report to generate.\nThe `Accept` header sent by the client determines the format of the report.\nCurrently supported: cyclonedx (application/vnd.cyclonedx+json), cyclonedx (application/vnd.cyclonedx+xml),\nspdx_23 (application/spdx+json), spdx_23 (application/spdx+xml)\n",
-              "enum": [
-                "cyclonedx",
-                "spdx_23"
-              ]
+              "enum": ["cyclonedx", "spdx_23"]
             }
           }
         ],
@@ -2605,9 +2450,7 @@
     },
     "/sca/risk-reports": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get a report for all the current SCA dependency risks for a given component and branch",
         "description": "Returns list of all risks for a given component and branch. CSV format is available by setting `Accept: text/csv` in your request headers.\n",
         "operationId": "getReport",
@@ -2640,10 +2483,7 @@
             "schema": {
               "type": "string",
               "description": "Type of risk to filter the report by. If not provided, all risks types are included.",
-              "enum": [
-                "VULNERABILITY",
-                "PROHIBITED_LICENSE"
-              ]
+              "enum": ["VULNERABILITY", "PROHIBITED_LICENSE"]
             }
           }
         ],
@@ -2671,9 +2511,7 @@
     },
     "/sca/releases": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Search for releases",
         "description": "Search for package releases that appear in the analyzed project,\napplication, or portfolio, as determined by software composition analysis.\n\nThis endpoint returns one result for each release,\nrather than one result for each time a release is pulled in.\nEach result may appear in multiple files or scopes that\nall use the same version of the affected package.\n\nThe search results do not include full details on the dependencies\nthat pull in each release, only a summary. To get the full dependency\ndetails, use the /releases/{key} endpoint for a single release.\n\nIn the terminology of this endpoint, a \"release\" is a version of\na package like \"lodash 1.2.3\", and a \"dependency\" is a specific file\nand scope that pulls in the release such as \"subproject/pom.xml test\".\nEach returned release may have multiple dependencies.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "search_3",
@@ -2806,9 +2644,7 @@
     },
     "/sca/releases/{key}": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get a single release",
         "description": "Fetch a single release by its key.\n\nThis single-release endpoint lists full details for all dependencies\nthat mention the release.\n\nIn the terminology of this endpoint, a \"release\" is a version of\na package like \"lodash 1.2.3\", and a \"dependency\" is a specific file\nand scope that pulls in the release such as \"subproject/pom.xml test\".\nEach returned release may have multiple dependencies.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "fetchRelease",
@@ -2840,9 +2676,7 @@
     },
     "/sca/license-profiles/assignable-projects": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "License profile assignable projects",
         "description": "  List the projects that can be assigned to the license profile. Assigning the\n  project to a license profile will cause that license profile to be used when\n  analyzing the project for license issues.\n",
         "operationId": "index_1",
@@ -2922,9 +2756,7 @@
     },
     "/sca/issues-releases": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Search for issue-release pairs",
         "description": "Search for software composition analysis issues (dependency risks)\nof a project, paired with releases that appear in the analyzed\nproject, application, or portfolio.\n\nThis endpoint returns one result for each (issue,release) pair,\nrather than one result for each distinct issue. So for example\nif a library uses two different versions of a package and\nboth versions are affected by the same vulnerability, you will\nget two results not one.\n\nHowever each result may appear in multiple files or scopes that\nall use the same version of the affected package.\n\nIn the terminology of this endpoint, a \"release\" is a version of\na package like \"lodash 1.2.3\", an \"issue\" is a problem such as\n\"CVE-1234\", and a \"dependency\" is a specific file and scope that\npulls in the release such as \"subproject/pom.xml test\".\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "search_4",
@@ -3174,9 +3006,7 @@
     },
     "/sca/issues-releases/{key}": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get a single issue-release pair",
         "description": "Fetch a single (issue,release) pair (dependency risk), using the key from the search endpoint.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "fetchIssueRelease",
@@ -3208,9 +3038,7 @@
     },
     "/sca/issues-releases/all-assignees": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get the list of users assigned to at least one issue in a given branch",
         "description": "Get the list of users assigned to at least one issue in a given branch.\n",
         "operationId": "getAllAssignees",
@@ -3266,9 +3094,7 @@
     },
     "/sca/enabled": {
       "get": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Get whether SCA is licensed and set up for a resource's organization or enterprise",
         "operationId": "getFeatureEnabled",
         "parameters": [],
@@ -3289,9 +3115,7 @@
     },
     "/sca/feature-enabled": {
       "get": {
-        "tags": [
-          "c"
-        ],
+        "tags": ["c"],
         "summary": "Get whether SCA is licensed and set up for a resource's organization or enterprise",
         "operationId": "getFeatureEnabled_1",
         "parameters": [],
@@ -3312,9 +3136,7 @@
     },
     "/sca/clis": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get available CLI downloads",
         "description": "Gets the available SCA CLI downloads. The response includes metadata about each option\nsuch as the filename and operating system.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "getScaClisMetadata",
@@ -3327,11 +3149,7 @@
             "schema": {
               "type": "string",
               "description": "Filter by operating system",
-              "enum": [
-                "windows",
-                "linux",
-                "macos"
-              ],
+              "enum": ["windows", "linux", "macos"],
               "example": "windows"
             },
             "example": "windows"
@@ -3344,10 +3162,7 @@
             "schema": {
               "type": "string",
               "description": "Filter by CPU architecture",
-              "enum": [
-                "x64",
-                "aarch64"
-              ],
+              "enum": ["x64", "aarch64"],
               "example": "x64"
             },
             "example": "x64"
@@ -3373,9 +3188,7 @@
     },
     "/sca/clis/{id}": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get metadata for a specific CLI download",
         "description": "Gets the metadata for a specific SCA CLI download. The response includes the\nfilename, SHA-256 checksum, operating system, and CPU architecture.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "downloadScaCli",
@@ -3428,9 +3241,7 @@
     },
     "/sca/analyses": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Fetch analysis status for one branch",
         "description": "Fetch analysis status information for a branch. If the branch has\nnever been analyzed, will return a status of 404.\n\nThis is an internal API and is subject to change without notice.\n",
         "operationId": "fetchAnalysis",
@@ -3483,9 +3294,7 @@
     },
     "/fix-suggestions/supported-rules": {
       "get": {
-        "tags": [
-          "supported-rules-controller"
-        ],
+        "tags": ["supported-rules-controller"],
         "summary": "Get the supported rules",
         "description": "Returns the list of rules for which a fix suggestion can be generated",
         "operationId": "supportedRules",
@@ -3506,9 +3315,7 @@
     },
     "/fix-suggestions/supported-llm-providers": {
       "get": {
-        "tags": [
-          "supported-llm-provider-controller"
-        ],
+        "tags": ["supported-llm-provider-controller"],
         "summary": "Get the supported LLM providers",
         "description": "Returns the LLM providers that could be used for requesting an AI fix suggestion",
         "operationId": "getLlmProviders",
@@ -3532,9 +3339,7 @@
     },
     "/fix-suggestions/service-info": {
       "get": {
-        "tags": [
-          "service-info-controller"
-        ],
+        "tags": ["service-info-controller"],
         "summary": "Request status of AI CodeFix service",
         "operationId": "get_1",
         "responses": {
@@ -3554,9 +3359,7 @@
     },
     "/fix-suggestions/issues/{issueId}": {
       "get": {
-        "tags": [
-          "fix-suggestion-issue-controller"
-        ],
+        "tags": ["fix-suggestion-issue-controller"],
         "summary": "Fetch AI suggestion availability for the given issueId",
         "description": "Requires Code Viewer permission.",
         "operationId": "get_2",
@@ -3586,9 +3389,7 @@
     },
     "/entitlements/purchasable-features": {
       "get": {
-        "tags": [
-          "p"
-        ],
+        "tags": ["p"],
         "summary": "Returns a list of all available purchasable features for this edition",
         "description": "  Returns a list of all available purchasable features for this edition including the ones who are already purchased\n",
         "operationId": "getPurchasableFeatures",
@@ -3612,9 +3413,7 @@
     },
     "/dop-translation/project-bindings": {
       "get": {
-        "tags": [
-          "default-project-bindings-controller"
-        ],
+        "tags": ["default-project-bindings-controller"],
         "summary": "Search across project bindings",
         "operationId": "getProjectBindingByProjectId",
         "parameters": [
@@ -3693,9 +3492,7 @@
     },
     "/dop-translation/project-bindings/{id}": {
       "get": {
-        "tags": [
-          "default-project-bindings-controller"
-        ],
+        "tags": ["default-project-bindings-controller"],
         "summary": "Fetch a single Project Binding",
         "operationId": "getProjectBinding",
         "parameters": [
@@ -3726,9 +3523,7 @@
     },
     "/dop-translation/dop-settings": {
       "get": {
-        "tags": [
-          "default-dop-settings-controller"
-        ],
+        "tags": ["default-dop-settings-controller"],
         "summary": "List all DevOps Platform Integration settings",
         "description": "Requires the 'Create Projects' permission ",
         "operationId": "fetchAllDopSettings",
@@ -3748,9 +3543,7 @@
     },
     "/architecture/graphs": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Search all current graphs available for a branch. This endpoint do not includes graph Data itself",
         "operationId": "魺",
         "parameters": [
@@ -3790,9 +3583,7 @@
     },
     "/architecture/graphs/{id}": {
       "get": {
-        "tags": [
-          "e"
-        ],
+        "tags": ["e"],
         "summary": "Get graph data by id.",
         "description": "Fetch the graph data produced by analysis.",
         "operationId": "魺_1",
@@ -3824,9 +3615,7 @@
     },
     "/architecture/file-graph": {
       "get": {
-        "tags": [
-          "$"
-        ],
+        "tags": ["$"],
         "summary": "Find the file graph for this project branch and source.",
         "operationId": "魺_2",
         "parameters": [
@@ -3875,9 +3664,7 @@
     },
     "/analysis/version": {
       "get": {
-        "tags": [
-          "default-version-controller"
-        ],
+        "tags": ["default-version-controller"],
         "summary": "Server version",
         "description": "Get the version of the Scanner Engine",
         "operationId": "getVersion",
@@ -3897,9 +3684,7 @@
     },
     "/analysis/jres": {
       "get": {
-        "tags": [
-          "default-jres-controller"
-        ],
+        "tags": ["default-jres-controller"],
         "summary": "All JREs metadata",
         "description": "Get metadata of all available JREs",
         "operationId": "getJresMetadata",
@@ -3942,9 +3727,7 @@
     },
     "/analysis/jres/{id}": {
       "get": {
-        "tags": [
-          "default-jres-controller"
-        ],
+        "tags": ["default-jres-controller"],
         "summary": "JRE download/metadata",
         "description": "This endpoint return the JRE metadata by default. To download the JRE binary asset, set the Accept header of the request to 'application/octet-stream'.",
         "operationId": "downloadJre",
@@ -3996,9 +3779,7 @@
     },
     "/analysis/engine": {
       "get": {
-        "tags": [
-          "default-scanner-engine-controller"
-        ],
+        "tags": ["default-scanner-engine-controller"],
         "summary": "Scanner engine download/metadata",
         "description": "This endpoint return the Scanner Engine metadata by default. To download the Scanner Engine, set the Accept header of the request to 'application/octet-stream'.",
         "operationId": "downloadScannerEngine",
@@ -4039,9 +3820,7 @@
     },
     "/analysis/active_rules": {
       "get": {
-        "tags": [
-          "default-active-rules-controller"
-        ],
+        "tags": ["default-active-rules-controller"],
         "summary": "Get all active rules for a specific project",
         "description": "Used by the scanner-engine to get all active rules for a given project.",
         "operationId": "getActiveRules",
@@ -4075,9 +3854,7 @@
     },
     "/sca/license-profiles/assigned-projects/{project-key}": {
       "delete": {
-        "tags": [
-          "$"
-        ],
+        "tags": ["$"],
         "summary": "Remove the project's assignment to the license profile.",
         "description": "   Remove the project's assignment to the license profile. If there is a default license profile,\n   it will be used to analyze license issues for this project.\n",
         "operationId": "delete_1",
@@ -4101,9 +3878,7 @@
     },
     "/authorizations/group-memberships/{id}": {
       "delete": {
-        "tags": [
-          "default-group-membership-controller"
-        ],
+        "tags": ["default-group-membership-controller"],
         "summary": "Remove a group membership",
         "description": "Remove a user from a group",
         "operationId": "delete_2",
@@ -4167,10 +3942,7 @@
             }
           }
         },
-        "required": [
-          "login",
-          "name"
-        ]
+        "required": ["login", "name"]
       },
       "UserRestResponseForAdmins": {
         "type": "object",
@@ -4244,11 +4016,7 @@
           "securityProtocol": {
             "type": "string",
             "description": "Security protocol used to connect to your SMTP server (SSLTLS is recommended)",
-            "enum": [
-              "NONE",
-              "SSLTLS",
-              "STARTTLS"
-            ]
+            "enum": ["NONE", "SSLTLS", "STARTTLS"]
           },
           "fromAddress": {
             "type": "string",
@@ -4268,10 +4036,7 @@
           "authMethod": {
             "type": "string",
             "description": "Authentication method used to connect to the SMTP server. OAuth is only supported for Microsoft Exchange",
-            "enum": [
-              "BASIC",
-              "OAUTH"
-            ]
+            "enum": ["BASIC", "OAUTH"]
           },
           "username": {
             "type": "string",
@@ -4302,10 +4067,7 @@
             "description": "For OAuth authentication: Microsoft tenant"
           }
         },
-        "required": [
-          "authMethod",
-          "securityProtocol"
-        ]
+        "required": ["authMethod", "securityProtocol"]
       },
       "EmailConfigurationResource": {
         "type": "object",
@@ -4325,11 +4087,7 @@
           "securityProtocol": {
             "type": "string",
             "description": "Security protocol used to connect to your SMTP server (SSLTLS is recommended)",
-            "enum": [
-              "NONE",
-              "SSLTLS",
-              "STARTTLS"
-            ]
+            "enum": ["NONE", "SSLTLS", "STARTTLS"]
           },
           "fromAddress": {
             "type": "string",
@@ -4346,10 +4104,7 @@
           "authMethod": {
             "type": "string",
             "description": "Authentication method used to connect to the SMTP server. OAuth is only supported for Microsoft Exchange",
-            "enum": [
-              "BASIC",
-              "OAUTH"
-            ]
+            "enum": ["BASIC", "OAUTH"]
           },
           "username": {
             "type": "string",
@@ -4389,9 +4144,7 @@
             "description": "Whether this license policy is the default or not"
           }
         },
-        "required": [
-          "name"
-        ]
+        "required": ["name"]
       },
       "LicenseProfileResource": {
         "type": "object",
@@ -4442,9 +4195,7 @@
             "description": "Assignee login"
           }
         },
-        "required": [
-          "issueReleaseKey"
-        ]
+        "required": ["issueReleaseKey"]
       },
       "AffectedPackageResource": {
         "type": "object",
@@ -4455,11 +4206,7 @@
           "recommendation": {
             "type": "string",
             "description": "The maintainer's overall recommendation, if available",
-            "enum": [
-              "ignore",
-              "upgrade",
-              "upgrade_or_workaround"
-            ]
+            "enum": ["ignore", "upgrade", "upgrade_or_workaround"]
           },
           "recommendationDetails": {
             "$ref": "#/components/schemas/VulnerabilityRecommendationDetailsResource"
@@ -4524,18 +4271,11 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "VULNERABILITY",
-              "PROHIBITED_LICENSE"
-            ]
+            "enum": ["VULNERABILITY", "PROHIBITED_LICENSE"]
           },
           "quality": {
             "type": "string",
-            "enum": [
-              "MAINTAINABILITY",
-              "RELIABILITY",
-              "SECURITY"
-            ]
+            "enum": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
           },
           "status": {
             "type": "string"
@@ -4560,24 +4300,14 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "CONFIRM",
-                "REOPEN",
-                "SAFE",
-                "FIXED",
-                "ACCEPT"
-              ]
+              "enum": ["CONFIRM", "REOPEN", "SAFE", "FIXED", "ACCEPT"]
             }
           },
           "actions": {
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "COMMENT",
-                "ASSIGN",
-                "SET_SEVERITY"
-              ]
+              "enum": ["COMMENT", "ASSIGN", "SET_SEVERITY"]
             },
             "uniqueItems": true
           },
@@ -4674,12 +4404,7 @@
           "fixLevel": {
             "type": "string",
             "description": "Describes which vulnerabilities are fixed",
-            "enum": [
-              "COMPLETE",
-              "PARTIAL",
-              "NONE",
-              "UNKNOWN"
-            ]
+            "enum": ["COMPLETE", "PARTIAL", "NONE", "UNKNOWN"]
           },
           "descriptionCode": {
             "type": "string",
@@ -4816,29 +4541,15 @@
           "quality": {
             "type": "string",
             "description": "Software Quality",
-            "enum": [
-              "MAINTAINABILITY",
-              "RELIABILITY",
-              "SECURITY"
-            ]
+            "enum": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
           },
           "severity": {
             "type": "string",
             "description": "Severity",
-            "enum": [
-              "INFO",
-              "LOW",
-              "MEDIUM",
-              "HIGH",
-              "BLOCKER"
-            ]
+            "enum": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
           }
         },
-        "required": [
-          "issueReleaseKey",
-          "quality",
-          "severity"
-        ]
+        "required": ["issueReleaseKey", "quality", "severity"]
       },
       "IssueReleaseClearSeverityWarningRestRequest": {
         "type": "object",
@@ -4848,9 +4559,7 @@
             "description": "Issue release key"
           }
         },
-        "required": [
-          "issueReleaseKey"
-        ]
+        "required": ["issueReleaseKey"]
       },
       "IssueReleaseStatusTransitionRequest": {
         "type": "object",
@@ -4862,23 +4571,14 @@
           "transitionKey": {
             "type": "string",
             "description": "Transition key",
-            "enum": [
-              "CONFIRM",
-              "REOPEN",
-              "SAFE",
-              "FIXED",
-              "ACCEPT"
-            ]
+            "enum": ["CONFIRM", "REOPEN", "SAFE", "FIXED", "ACCEPT"]
           },
           "comment": {
             "type": "string",
             "description": "Transition comment"
           }
         },
-        "required": [
-          "issueReleaseKey",
-          "transitionKey"
-        ]
+        "required": ["issueReleaseKey", "transitionKey"]
       },
       "IssueReleaseAddCommentRestRequest": {
         "type": "object",
@@ -4892,19 +4592,14 @@
             "description": "comment"
           }
         },
-        "required": [
-          "issueReleaseKey"
-        ]
+        "required": ["issueReleaseKey"]
       },
       "AwarenessBannerClickedRequest": {
         "type": "object",
         "properties": {
           "bannerType": {
             "type": "string",
-            "enum": [
-              "ENABLE",
-              "LEARN_MORE"
-            ]
+            "enum": ["ENABLE", "LEARN_MORE"]
           }
         }
       },
@@ -4954,13 +4649,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "endLine",
-          "message",
-          "ruleKey",
-          "sourceCode",
-          "startLine"
-        ]
+        "required": ["endLine", "message", "ruleKey", "sourceCode", "startLine"]
       },
       "ChangeDto": {
         "type": "object",
@@ -5051,10 +4740,7 @@
             "description": "Set of SonarQube permissions to apply"
           }
         },
-        "required": [
-          "permissions",
-          "role"
-        ]
+        "required": ["permissions", "role"]
       },
       "RestPermissions": {
         "type": "object",
@@ -5146,10 +4832,7 @@
           "provisioningType": {
             "type": "string",
             "description": "Type of synchronization",
-            "enum": [
-              "JIT",
-              "AUTO_PROVISIONING"
-            ]
+            "enum": ["JIT", "AUTO_PROVISIONING"]
           },
           "provisioningToken": {
             "type": "string",
@@ -5201,10 +4884,7 @@
           },
           "provisioningType": {
             "type": "string",
-            "enum": [
-              "JIT",
-              "AUTO_PROVISIONING"
-            ]
+            "enum": ["JIT", "AUTO_PROVISIONING"]
           },
           "isProvisioningTokenSet": {
             "type": "boolean",
@@ -5271,10 +4951,7 @@
           "provisioningType": {
             "type": "string",
             "description": "Type of synchronization",
-            "enum": [
-              "JIT",
-              "AUTO_PROVISIONING"
-            ]
+            "enum": ["JIT", "AUTO_PROVISIONING"]
           },
           "allowUsersToSignUp": {
             "type": "boolean",
@@ -5330,10 +5007,7 @@
           },
           "provisioningType": {
             "type": "string",
-            "enum": [
-              "JIT",
-              "AUTO_PROVISIONING"
-            ]
+            "enum": ["JIT", "AUTO_PROVISIONING"]
           },
           "allowUsersToSignUp": {
             "type": "boolean"
@@ -5391,9 +5065,7 @@
             "description": "True if project is part of a mono repo."
           }
         },
-        "required": [
-          "monorepo"
-        ]
+        "required": ["monorepo"]
       },
       "BoundProjectCreateRestResponse": {
         "type": "object",
@@ -5413,21 +5085,11 @@
         "properties": {
           "softwareQuality": {
             "type": "string",
-            "enum": [
-              "MAINTAINABILITY",
-              "RELIABILITY",
-              "SECURITY"
-            ]
+            "enum": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
           },
           "severity": {
             "type": "string",
-            "enum": [
-              "INFO",
-              "LOW",
-              "MEDIUM",
-              "HIGH",
-              "BLOCKER"
-            ]
+            "enum": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
           }
         }
       },
@@ -5446,13 +5108,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "STRING",
-              "TEXT",
-              "BOOLEAN",
-              "INTEGER",
-              "FLOAT"
-            ],
+            "enum": ["STRING", "TEXT", "BOOLEAN", "INTEGER", "FLOAT"],
             "readOnly": true
           }
         }
@@ -5486,12 +5142,7 @@
             "type": "string",
             "default": "READY",
             "description": "Rule status",
-            "enum": [
-              "BETA",
-              "DEPRECATED",
-              "READY",
-              "REMOVED"
-            ]
+            "enum": ["BETA", "DEPRECATED", "READY", "REMOVED"]
           },
           "parameters": {
             "type": "array",
@@ -5534,12 +5185,7 @@
           "type": {
             "type": "string",
             "description": "Rule type",
-            "enum": [
-              "CODE_SMELL",
-              "BUG",
-              "VULNERABILITY",
-              "SECURITY_HOTSPOT"
-            ]
+            "enum": ["CODE_SMELL", "BUG", "VULNERABILITY", "SECURITY_HOTSPOT"]
           }
         },
         "required": [
@@ -5599,12 +5245,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "CODE_SMELL",
-              "BUG",
-              "VULNERABILITY",
-              "SECURITY_HOTSPOT"
-            ]
+            "enum": ["CODE_SMELL", "BUG", "VULNERABILITY", "SECURITY_HOTSPOT"]
           },
           "impacts": {
             "type": "array",
@@ -5633,21 +5274,11 @@
           },
           "cleanCodeAttributeCategory": {
             "type": "string",
-            "enum": [
-              "ADAPTABLE",
-              "CONSISTENT",
-              "INTENTIONAL",
-              "RESPONSIBLE"
-            ]
+            "enum": ["ADAPTABLE", "CONSISTENT", "INTENTIONAL", "RESPONSIBLE"]
           },
           "status": {
             "type": "string",
-            "enum": [
-              "BETA",
-              "DEPRECATED",
-              "READY",
-              "REMOVED"
-            ]
+            "enum": ["BETA", "DEPRECATED", "READY", "REMOVED"]
           },
           "external": {
             "type": "boolean"
@@ -5873,11 +5504,7 @@
           "securityProtocol": {
             "type": "string",
             "description": "Security protocol used to connect to your SMTP server (SSLTLS is recommended)",
-            "enum": [
-              "NONE",
-              "SSLTLS",
-              "STARTTLS"
-            ]
+            "enum": ["NONE", "SSLTLS", "STARTTLS"]
           },
           "fromAddress": {
             "type": "string",
@@ -5894,10 +5521,7 @@
           "authMethod": {
             "type": "string",
             "description": "Authentication method used to connect to the SMTP server. OAuth is only supported for Microsoft Exchange",
-            "enum": [
-              "BASIC",
-              "OAUTH"
-            ]
+            "enum": ["BASIC", "OAUTH"]
           },
           "username": {
             "type": "string",
@@ -5944,15 +5568,10 @@
           "policy": {
             "type": "string",
             "description": "The new status of this license.",
-            "enum": [
-              "ALLOW",
-              "DENY"
-            ]
+            "enum": ["ALLOW", "DENY"]
           }
         },
-        "required": [
-          "policy"
-        ]
+        "required": ["policy"]
       },
       "LicensePolicyLicenseResource": {
         "type": "object",
@@ -5978,10 +5597,7 @@
           "policy": {
             "type": "string",
             "description": "The policy status of this license.",
-            "enum": [
-              "ALLOW",
-              "DENY"
-            ]
+            "enum": ["ALLOW", "DENY"]
           }
         }
       },
@@ -5991,15 +5607,10 @@
           "policy": {
             "type": "string",
             "description": "The new status of this category.",
-            "enum": [
-              "ALLOW",
-              "DENY"
-            ]
+            "enum": ["ALLOW", "DENY"]
           }
         },
-        "required": [
-          "policy"
-        ]
+        "required": ["policy"]
       },
       "LicenseProfileCategoryResource": {
         "type": "object",
@@ -6019,10 +5630,7 @@
           "policy": {
             "type": "string",
             "description": "The policy status of this category.",
-            "enum": [
-              "ALLOW",
-              "DENY"
-            ]
+            "enum": ["ALLOW", "DENY"]
           }
         }
       },
@@ -6038,10 +5646,7 @@
             "description": "The key of the project that should be assigned to the license profile."
           }
         },
-        "required": [
-          "licenseProfileUuid",
-          "projectKey"
-        ]
+        "required": ["licenseProfileUuid", "projectKey"]
       },
       "IssueReleaseUpdateCommentRestRequest": {
         "type": "object",
@@ -6055,10 +5660,7 @@
             "description": "Comment text"
           }
         },
-        "required": [
-          "comment",
-          "issueReleaseChangeKey"
-        ]
+        "required": ["comment", "issueReleaseChangeKey"]
       },
       "FeatureEnablementRequest": {
         "type": "object",
@@ -6141,10 +5743,7 @@
           "provisioningType": {
             "type": "string",
             "description": "Type of synchronization",
-            "enum": [
-              "JIT",
-              "AUTO_PROVISIONING"
-            ]
+            "enum": ["JIT", "AUTO_PROVISIONING"]
           },
           "allowUsersToSignUp": {
             "type": "boolean",
@@ -6202,10 +5801,7 @@
           "provisioningType": {
             "type": "string",
             "description": "Type of synchronization",
-            "enum": [
-              "JIT",
-              "AUTO_PROVISIONING"
-            ]
+            "enum": ["JIT", "AUTO_PROVISIONING"]
           },
           "allowUsersToSignUp": {
             "type": "boolean",
@@ -6226,19 +5822,14 @@
         "properties": {
           "mode": {
             "type": "string",
-            "enum": [
-              "MQR",
-              "STANDARD_EXPERIENCE"
-            ]
+            "enum": ["MQR", "STANDARD_EXPERIENCE"]
           },
           "modified": {
             "type": "boolean",
             "readOnly": true
           }
         },
-        "required": [
-          "mode"
-        ]
+        "required": ["mode"]
       },
       "GroupUpdateRestRequest": {
         "type": "object",
@@ -6318,11 +5909,7 @@
         "properties": {
           "status": {
             "type": "string",
-            "enum": [
-              "GREEN",
-              "YELLOW",
-              "RED"
-            ]
+            "enum": ["GREEN", "YELLOW", "RED"]
           },
           "causes": {
             "type": "array",
@@ -6419,30 +6006,15 @@
           },
           "riskType": {
             "type": "string",
-            "enum": [
-              "VULNERABILITY",
-              "PROHIBITED_LICENSE"
-            ]
+            "enum": ["VULNERABILITY", "PROHIBITED_LICENSE"]
           },
           "riskSeverity": {
             "type": "string",
-            "enum": [
-              "INFO",
-              "LOW",
-              "MEDIUM",
-              "HIGH",
-              "BLOCKER"
-            ]
+            "enum": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
           },
           "riskStatus": {
             "type": "string",
-            "enum": [
-              "OPEN",
-              "ACCEPT",
-              "CONFIRM",
-              "SAFE",
-              "FIXED"
-            ]
+            "enum": ["OPEN", "ACCEPT", "CONFIRM", "SAFE", "FIXED"]
           },
           "statusChanges": {
             "type": "array",
@@ -6587,18 +6159,11 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "VULNERABILITY",
-              "PROHIBITED_LICENSE"
-            ]
+            "enum": ["VULNERABILITY", "PROHIBITED_LICENSE"]
           },
           "quality": {
             "type": "string",
-            "enum": [
-              "MAINTAINABILITY",
-              "RELIABILITY",
-              "SECURITY"
-            ]
+            "enum": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
           },
           "createdAt": {
             "type": "string"
@@ -6775,18 +6340,11 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "VULNERABILITY",
-              "PROHIBITED_LICENSE"
-            ]
+            "enum": ["VULNERABILITY", "PROHIBITED_LICENSE"]
           },
           "quality": {
             "type": "string",
-            "enum": [
-              "MAINTAINABILITY",
-              "RELIABILITY",
-              "SECURITY"
-            ]
+            "enum": ["MAINTAINABILITY", "RELIABILITY", "SECURITY"]
           },
           "status": {
             "type": "string"
@@ -6823,24 +6381,14 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "CONFIRM",
-                "REOPEN",
-                "SAFE",
-                "FIXED",
-                "ACCEPT"
-              ]
+              "enum": ["CONFIRM", "REOPEN", "SAFE", "FIXED", "ACCEPT"]
             }
           },
           "actions": {
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "COMMENT",
-                "ASSIGN",
-                "SET_SEVERITY"
-              ]
+              "enum": ["COMMENT", "ASSIGN", "SET_SEVERITY"]
             },
             "uniqueItems": true
           }
@@ -6912,10 +6460,7 @@
             "type": "array",
             "items": {
               "type": "string",
-              "enum": [
-                "EDIT_COMMENT",
-                "DELETE_COMMENT"
-              ]
+              "enum": ["EDIT_COMMENT", "DELETE_COMMENT"]
             },
             "uniqueItems": true
           }
@@ -6987,11 +6532,7 @@
         "properties": {
           "status": {
             "type": "string",
-            "enum": [
-              "FAILED",
-              "OUTDATED",
-              "COMPLETED"
-            ]
+            "enum": ["FAILED", "OUTDATED", "COMPLETED"]
           },
           "failedReason": {
             "type": "string"
@@ -7262,12 +6803,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "devOpsPlatformSettingId",
-          "id",
-          "projectId",
-          "projectKey"
-        ]
+        "required": ["devOpsPlatformSettingId", "id", "projectId", "projectKey"]
       },
       "ProjectBindingsSearchRestResponse": {
         "type": "object",
@@ -7408,21 +6944,11 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "file_graph",
-              "namespace_graph"
-            ]
+            "enum": ["file_graph", "namespace_graph"]
           },
           "ecosystem": {
             "type": "string",
-            "enum": [
-              "java",
-              "js",
-              "ts",
-              "py",
-              "cs",
-              "xoo"
-            ]
+            "enum": ["java", "js", "ts", "py", "cs", "xoo"]
           },
           "perspectiveKey": {
             "type": "string"
@@ -7512,13 +7038,7 @@
             "type": "object",
             "additionalProperties": {
               "type": "string",
-              "enum": [
-                "INFO",
-                "LOW",
-                "MEDIUM",
-                "HIGH",
-                "BLOCKER"
-              ]
+              "enum": ["INFO", "LOW", "MEDIUM", "HIGH", "BLOCKER"]
             }
           }
         }

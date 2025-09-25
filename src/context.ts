@@ -131,7 +131,10 @@ function loadSonarProjectConfig() {
       // Extract sonar.projectKey from pom.xml properties, or fallback to groupId:artifactId
       if (properties['sonar.projectKey']) {
         pomConfig.projectKey = properties['sonar.projectKey'];
-      } else if (properties['project.groupId'] && properties['project.artifactId']) {
+      } else if (
+        properties['project.groupId'] &&
+        properties['project.artifactId']
+      ) {
         pomConfig.projectKey = `${properties['project.groupId']}:${properties['project.artifactId']}`;
       }
 
