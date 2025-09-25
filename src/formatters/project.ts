@@ -3,6 +3,7 @@ import { Project } from '../types/project';
 import { formatPublicOrPrivate, indent } from './common';
 import client from '../http';
 import { wrapText } from './html';
+import { URL } from 'node:url';
 
 export function formatProject(project: Project) {
   const tags = project.tags.length > 0 ? project.tags.join(', ') : 'No tags';
@@ -20,7 +21,10 @@ export function formatProject(project: Project) {
   }
   line2 += `${chalk.bold('Visibility')}:${formatPublicOrPrivate(project.visibility)}`;
 
-  const issuesUrl = `${client.defaults.baseURL}/project/issues?id=${project.key}`;
+  const issuesUrl = new URL(
+    `/project/issues?id=${project.key}`,
+    client.defaults.baseURL
+  ).href;
 
   const output = [
     titleLine,

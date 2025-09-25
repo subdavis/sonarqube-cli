@@ -1,13 +1,14 @@
 import { Command } from 'commander';
 import { getSonarProjectConfig } from '../context';
 import chalk from 'chalk';
+import { indent } from '../formatters/common';
 
 export function createConfigCommand(): Command {
   const configCmd = new Command('config');
   configCmd.description('Show discovered configuration').action(() => {
     const config = getSonarProjectConfig();
 
-    console.log(chalk.bold('SonarQube Configuration\n'));
+    console.log(chalk.bold('SonarQube CLI Configuration:'));
 
     if (Object.keys(config).length === 0) {
       console.log(chalk.yellow('No configuration found.'));
@@ -24,23 +25,37 @@ export function createConfigCommand(): Command {
     }
 
     if (config.projectKey) {
-      console.log(`${chalk.green('Project Key:')} ${config.projectKey}`);
+      console.log(`${chalk.green('sonar.projectKey:')} ${config.projectKey}`);
     }
 
     if (config.organization) {
-      console.log(`${chalk.green('Organization:')} ${config.organization}`);
+      console.log(
+        `${chalk.green('sonar.organization:')} ${config.organization}`
+      );
     }
 
     if (config.host) {
-      console.log(`${chalk.green('Host URL:')} ${config.host}`);
+      console.log(`${chalk.green('sonar.host.url:')} ${config.host}`);
     }
 
     if (config.branchName) {
-      console.log(`${chalk.green('Branch Name:')} ${config.branchName}`);
+      console.log(`${chalk.green('sonar.branch.name:')} ${config.branchName}`);
     }
 
     if (config.projectName) {
-      console.log(`${chalk.green('Project Name:')} ${config.projectName}`);
+      console.log(`${chalk.green('sonar.projectName:')} ${config.projectName}`);
+    }
+
+    if (process.env.SONAR_HOST_URL) {
+      console.log(
+        `${chalk.green('sonar.host.url:')} ${process.env.SONAR_HOST_URL}`
+      );
+    }
+
+    if (process.env.SONAR_TOKEN) {
+      console.log(`${chalk.green('sonar.token:')} defined`);
+    } else {
+      console.log(`${chalk.red('sonar.token:')} undefined`);
     }
   });
 
