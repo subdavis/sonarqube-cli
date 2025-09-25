@@ -4,6 +4,7 @@ export interface IssueListFilters {
   organization?: string;
   severity?: string[];
   status?: string[];
+  pullRequest?: string;
   fix?: boolean;
   limit?: number;
   json?: boolean;
@@ -11,6 +12,7 @@ export interface IssueListFilters {
 
 export interface IssueShowOptions {
   organization?: string;
+  project?: string;
   fix?: boolean;
   json?: boolean;
 }

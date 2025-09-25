@@ -7,6 +7,7 @@ import { createProjectCommands } from './commands/project';
 import { createStatusCommand } from './commands/status';
 import { createDepRisksCommands } from './commands/dep-risks';
 import { createRuleCommands } from './commands/rule';
+import { createConfigCommand } from './commands/config';
 import { setGlobalOptions } from './http';
 import pkgData from '../package.json';
 
@@ -43,6 +44,7 @@ program.addCommand(createProjectCommands());
 program.addCommand(createStatusCommand());
 program.addCommand(createDepRisksCommands());
 program.addCommand(createRuleCommands());
+program.addCommand(createConfigCommand());
 
 // Show help by default when no command is provided
 if (process.argv.length <= 2) {

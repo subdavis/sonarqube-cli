@@ -36,6 +36,7 @@ export async function searchIssues(
       organization: filters.organization,
       impactSeverities: filters.severity?.join(','),
       issueStatuses: filters.status?.map((s) => s.toUpperCase()).join(','),
+      pullRequest: filters.pullRequest,
       ps: filters.limit || 20,
     },
   });
@@ -44,10 +45,11 @@ export async function searchIssues(
 
 export async function getIssue(
   issueId: string,
-  organization?: string
+  organization?: string,
+  project?: string
 ): Promise<IssueListResponse> {
   const response = await client.get<IssueListResponse>('/api/issues/search', {
-    params: { issues: issueId, organization },
+    params: { issues: issueId, organization, componentKeys: project },
   });
   return response.data;
 }

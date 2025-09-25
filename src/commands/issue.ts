@@ -69,7 +69,7 @@ async function showIssue(issueId: string, _options: IssueShowOptions) {
       ...optionsWithoutFix,
     };
     const [issueResponse, snippetResponse] = await Promise.all([
-      getIssue(issueId, options.organization),
+      getIssue(issueId, options.organization, options.project),
       getIssueSnippet(issueId, options.organization),
     ]);
 
@@ -126,6 +126,7 @@ export function createIssueCommands() {
       '--severity <severities...>',
       'Severities to filter by: INFO, LOW, MEDIUM, HIGH, BLOCKER (can specify multiple)'
     )
+    .option('-pr, --pull-request <key>', 'Pull request key')
     .option(
       '--status <statuses...>',
       'Statuses to filter by: OPEN, CONFIRMED, REOPENED, RESOLVED, CLOSED (can specify multiple)'
@@ -143,7 +144,8 @@ export function createIssueCommands() {
 
   issueCmd
     .command('show <id>')
-    .option('--organization <org>', 'Organization to filter by')
+    .option('-o, --organization <org>', 'Organization to filter by')
+    .option('-p, --project <key>', 'Project key to filter by')
     .option('--fix', 'Automatically fix the issue with configured LLM')
     .option('--json', 'Return raw JSON response')
     .description('Show detailed information about a specific issue')

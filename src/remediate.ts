@@ -1,6 +1,7 @@
 import { spawn } from 'child_process';
 
-const AIAgentCli = ['claude', '--print', '--allowedTools', 'Edit,Bash(git:*)'];
+// const ClaudeCli = ['claude', '--print', '--allowedTools', 'Edit,Bash(git:*)'];
+const AIAgentCli = ['cursor', '--print'];
 
 export async function runSubprocess(prompt: string) {
   console.log('Running claude with prompt from STDIN...');

@@ -71,7 +71,17 @@ client.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${tokenFromEnv}`;
   transformForCloud(config);
 
-  if (client.defaults.headers['X-Dry-Run'] === 'true') {
+  const dryRun = client.defaults.headers['X-Dry-Run'] === 'true';
+  delete config.headers['X-Dry-Run'];
+
+  if (dryRun) {
+    const undefinedHeaders = Object.entries(config.params).filter(
+      (pair) => pair[1] === undefined
+    );
+    undefinedHeaders.forEach(([key]) => {
+      delete config.params[key];
+    });
+
     const curl = new CurlHelper(config);
     console.log(curl.generateCommand());
     process.exit(0);
